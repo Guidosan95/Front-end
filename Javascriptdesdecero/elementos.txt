@@ -239,3 +239,46 @@ También llamados “operadores relacionales”, se emplean para comparar y esta
 < Operador de comparación menor que: permite comparar dos valores específicos, y retornar un valor booleano TRUE, si valorA es menor que valorB, o FALSE, si no lo es.
 <= Operador de comparación mayor que: permite comparar dos valores específicos, y retornar un valor booleano TRUE, si valorA es menor, o igual, que valorB, o FALSE, si no lo es.
 !== Operador de comparación distinto de: permite comparar dos valores específicos, y retornar un valor booleano TRUE, si valorA es distinto de valorB, o FALSE, si son iguales.
+
+Por ejemplo:
+let nombre= "EducacionIT"
+let empresa = "EDUCACIONIT"
+
+let nroA= 2005
+let nroB= 1996
+
+nombre === empresa       //retorna false
+nombre != empresa       //retorna true
+nroA > nroB             //retorna true
+nroA >=nroB             //retorna true
+nroA < nroB             //retorna false
+nroA <= nroB            //retorna false
+
+
+// Operadores lógicos
+
+Permiten combinar o invertir valores que se utilizan en comparaciones múltiples.
+
+&&
+(AND):
+Operador lógico AND: se representa con el símbolo && (doble ampersand), y permite establecer una comparación combinada. Por ejemplo, comparar si valorA es igual a valorB && si valorC es igual a valorD. Si ambas condiciones se cumplen, retornará TRUE como resultado y, si una de las dos condiciones no se cumple, retornará FALSE como resultado.
+
+||
+(OR):
+Operador lógico OR: se representa con el símbolo || (doble pipe), y permite establecer una comparación combinada / alternativa. Por ejemplo, comparar si valorA es igual a valorB || si valorC es igual a valorD. Si al menos una de estas dos comparaciones se cumple, retornará TRUE como resultado y, si ninguna se cumple, retornará FALSE.
+
+!
+(NOT):
+Operador lógico NOT: se representa con el carácter ! (signo de exclamación), y se combina generalmente con alguno de los operadores de comparación.
+
+Por ejemplo:
+let nombre= "EducacionIT"
+let empresa = "EDUCACIONIT"
+
+let nroA= 2005
+let nroB= 1996
+
+nombre !== empresa && nroA >nroB     //retorna true
+nombre === empresa && nroA >nroB     //retorna false
+nombre === empresa || nroA <nroB     //retorna false
+empresa !== nombre || nroA >nroB     //retorna true
