@@ -282,3 +282,19 @@ nombre !== empresa && nroA >nroB     //retorna true
 nombre === empresa && nroA >nroB     //retorna false
 nombre === empresa || nroA <nroB     //retorna false
 empresa !== nombre || nroA >nroB     //retorna true
+
+
+// CUADROS DE DIALOGO
+
+// Herramientas integradas de JS
+JS Ofrece herramientas que se dividen en dos categorias:
+● Cuadros de dialogo: son herramientas graficas, nativas del navegador web que permiten interactuar con el usuario. Los cuadros de dialogo se integran dentro del objeto global window. Los cuadros de dialogo son los siguientes:
+- alert(): Muestra un cuadro de diálogo llamado alert(), en la página web desde donde se invoca. Se utiliza para mostrar un mensaje al usuario, en forma de mensaje de una sola vía (el usuario no puede interactuar, solo puede pulsar el botón
+Aceptar, para cerrarlo).
+- confirm(): Esta sentencia muestra un cuadro de diálogo emergente con dos botones (Aceptar - Cancelar). El usuario puede pulsar cualquiera de las dos opciones. Se captura la decisión del usuario y se aplica en la lógica del código.
+- prompt(): Esta sentencia muestra un cuadro de diálogo emergente con dos botones (Aceptar - Cancelar), más una caja de texto. A través de esta, el usuario podrá ingresar un dato de cualquier tipo. Lo que allí se ingrese se define como término de entrada, y podrá ser capturado por el código JavaScript y utilizado internamente.
+
+El uso de los cuadros de diálogo prompt() y confirm() requieren que se anteponga a su declaración, una variable o constante dado que, cuando el usuario interactúa con estos cuadros de diálogo, genera una entrada de datos o la elección de un botón, y en ambos casos, los cuadros de diálogo retornarán un valor.
+
+● Herramientas de consola
+
