@@ -4,13 +4,17 @@
 
 * {
     font-family:'Roboto', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 html {
     min-height: 100%;
     background-color: rgb(126, 88, 161);
 }
-
+body{
+    margin: 0;
+    width: 100%;
+}
 .center {
     text-align: center;
 }
@@ -23,16 +27,19 @@ h1 {
 label {
     font-weight: 400;
     color: black;
+    text-align: center;
 }
 
 .div-quote {
     background-color: white;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 26%;
+    margin-right: 26%;
     padding: 10px;
     border-color: whitesmoke;
     box-shadow: 26px 28px 15px -8px rgba(0,0,0,0.15);
     border-radius: 0.7rem;
+    text-align: center;
+    
 }
 
 select, input {
