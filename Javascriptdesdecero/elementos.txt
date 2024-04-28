@@ -298,3 +298,201 @@ El uso de los cuadros de diálogo prompt() y confirm() requieren que se antepong
 
 ● Herramientas de consola
 
+// ESTRUCTURAS DE CONTRO DE FLUJO
+Si solamente se trabaja con operadores y variables, se genera una sucesión de pasos lineales. No se puede decidir si algo se mostrará o no según determinadas circunstancias o, en todo caso, repetir una instrucción varias veces. Para realizar estas secuencias más complejas y con múltiples posibilidades se debe trabajar con estructuras de control de flujo.
+● Tipo booleano:
+Los tipos de variables de datos booleanos son aquellos conformados únicamente por dos posibles valores: true/false. Un booleano puede ser definido en forma explícita, por ejemplo, al asignar el valor true a una variable.
+Recordemos que, por ejemplo, si utilizamos el cuadro de diálogo confirm(), el resultado, que retornará al pulsar alguno de los botones, será verdadero o falso.
+Por ejemplo: 
+
+let respuesta = confirm('¿Estas segura/o de continuar?')
+A lo que aparecera un recuadro para Aceptar o Cancelar dicha preguntas.
+
+Si quisieramos mostrar la respuesta, deberiamos hacer lo siguiente:
+let respuesta = confirm('¿Estas segura/o de continuar')
+console.log("La respuesta elegida fue: ", respuesta).
+(si el usuario cancelara, el resultado seria "false". Ahora si aceptara, el resultado seria "true")
+
+// Operadores de comparacion:
+De igual forma, un valor booleano puede ser el resultante de la comparacion de valores que parten de variables, constantes y otros tantos elementos que cofnorman una aplicacion. (ya mencionados anteriormente)
+
+// Operadores logicos:
+Tambien podemos utilizar operadores logicos para genera procesos mas complejos donde decimos, por ejemplo, que un numero es igual o mayor a otro pero tambien que puede cumplir o no con otra condicion.
+
+//ESTRUCTURAS CONDICIONALES
+
+Condicionales
+Permiten decisiones acerca de qué sentencias (órdenes) debe ejecutar el programa, en base a una condición / expresión booleana; es decir, si algo retorna true/false.
+Se puede decir que a diferencia de los programas que veníamos generando, en este caso, se seguirán una serie de pasos u otra, según el dato de entrada. Por lo tanto, el resultado o dato de salida dependerá del dato de entrada. Los condicionales que explicaremos en las siguientes pantallas son:
+
+● if: el condicional "if" es la estructura mas utilizada al momento de necesitar planteos condicionales para tomar una u otra decision. 
+Si la condición se cumple (es decir, si su valor es true)
+Se ejecutarán las instrucciones que se encuentran dentro de las llaves de bloque {...}. 
+        ej:
+                let mostrarMensaje = true;
+                if(mostrarMensaje){
+                        alert('Hola mundo');
+                }
+Si la condición no se cumple (es decir, si su valor es false)
+No se ejecuta ninguna instrucción contenida en lasllaves de bloque {...} y el programa continúa con laejecución de cualquier otra instrucción oinstrucciones que estén por fuera del condicional:
+        ej:
+                let mostrarMensaje = false;
+                if(mostrarMensaje){
+                        alert('No vas a ver este mensaje');
+                }
+
+● if, else: En este caso, se fija una alternativa. Algoritmo y pseudocodigo que representan esta situacion. La clausula "else" nos permite una condicion alternativa, a ejecutar siempre que la condicion principal if() retorne un valor booleano "false".
+        ej: 
+                let mayorEdad= 18;
+                if(mayorEdad >=18){
+                        console.log('Es mayor de edad');
+                } else{
+                        console.log('Es menor de edad');
+                }
+
+● if, else, else if: La estructura "else if" brinda la posibilidad que se ejecuten una serie de pasos si una opcion (no la primera) es verdadera. Es posible encadenar tantos else if, como consideremos necesario hacerlo.
+        ej: 
+                let edad = 26;
+                if(edad < 12){
+                        alert('Todavia eres muy pequeño');
+                }
+                else if(edad < 19){
+                        alert('Eres un adolescente');
+                }
+                else if(edad < 35){
+                        alert('Aun sigues siendo joven');
+                }
+                else{
+                        alert('Piensa en cuidarte un poco mas')
+                }
+
+// Condicionales compuestos
+La estructura if, y else…if permiten analizar condiciones simples, y también compuestas. En
+este último caso, podemos sumar diferentes condiciones, validando si una de las dos, si las dos, o si ninguna se cumple.
+Aquí entran en acción los condicionales compuestos, quienes se combinan con los operadores lógicos && (and), || (or) y eventualmente ! (not)
+Por Ej:
+        let nombreIngresado= prompt("Ingrese su nombre");
+        if((nombreIngresado != "") && (nombreIngresado == "juan" || nombreIngresado == "JUAN"))
+        {
+                console.log("El nombre ingresado es Juan");
+        }
+        else{
+                console.log("Error: Ingresar nombre valido");
+        }
+
+switch: 
+La cláusula switch, en JavaScript, es una estructura de control que permite evaluar una expresión y comparar su valor con múltiples casos posibles. Cuando se encuentra un caso que coincide con el valor de la expresión, se ejecuta el bloque de código correspondiente a ese caso.
+Es parecido a "if". y se escribe de la siguiente manera
+
+switch (lo que vaya adentro){
+        case 1:
+        // programo la accion positiva para el caso concreto
+                nombreDelDia = 'Lunes';
+        break
+        
+        case 2:
+                nombreDelDia = 'Viernes';
+        break;
+        //Si ninguno de los casos coincide, se puede proporcionar un caso default (por defecto), quese ejecutará si no hay coincidencias. Veamos el siguiente ejemplo:
+        default:
+        nombreDelDia = 'Dia no valido';
+}
+Ejemplos de parámetros para un switch - case:
+● El estado civil de una persona (soltero, divorciado, viudo,
+casado).
+● El sexo de una persona (M, F).
+● El resultado de un partido (victoria, empate, derrota).
+● Los colores del arcoíris (rojo, azul, violeta, y otros).
+● Puntos ganados en un partido (3, 1 ó 0).
+● Grupos sanguíneos.
+● Provincias de Argentina.
+
+// estructura de control "while":
+es una accion repetitiva por tantas veces como la accion se cumpla, es decir un bucle
+Por Ej:
+
+var resultado = 0;
+var tope = 100;
+var n = 0;
+
+while(n <= tope){
+        resultado += n;
+        console.log("resultado vale: " + resultado);
+        n++;
+}
+
+el do while, es parecido
+do {
+        consolte.log("resultado vale: " + resultado );
+        n++;
+} while (n <= tope);
+
+Consola de JavaScript
+La consola de JavaScript es una herramienta disponible en todos los navegadores. Sirve para realizar la depuración del código.
+Los métodos que explicaremos en los siguientes slides son:
+● console.assert. Registra un mensaje y envía una traza de error a la consola si el primer argumento es falso. Este método sirve para evaluar y probar un código mediante los Assertion Test, que son pruebas en las que se evalúa el estado de una variable. A diferencia de un if/else, console.assert es útil solo para el desarrollador. 
+● console.clear. Limpia la consola, borra todos los mensajes previos. Es muy útil para cuando tenemos mucho por depurar, incluir este método en el código para hacer más legible el área de depuración de la aplicación web.
+● console.count. Registra el número de veces que esta línea ha sido llamada con la etiqueta dada 
+● console.countReset. Reinicia el valor del contador para la etiqueta dada
+● console.debug Registra un mensaje con el nivel de debug. El nivel debug es un nivel menos grave que el error
+● console.time. Una herramienta útil para medir el rendimiento
+de un programa es el temporizador. Con el temporizador es posible evaluar cuánto tarda el navegador en ejecutar un código determinado. Con esta información se puede verificar si es necesario cambiar el código para que funcione más rápido
+
+// Objeto de fecha: Clase "Date"
+La clase Date es un objeto que forma parte del Core JavaScript. Permite manipular fechas y horas en los desarrollos. Este objeto es instanciable. Esto significa que permite “crear múltiples copias” de ese objeto, de acuerdo a la necesidad de la aplicación. Al ser instanciable, la clase Date() puede ser utilizada para crear múltiples fechas y horas diferentes y, por ejemplo, calcular períodos de tiempo entre estas En este ejemplo de código, vemos la clase Date() instanciada con la fecha indicada en formato Año, Mes, Día
+
+● const fechaInicial = new Date(1996, 7, 14);
+
+Por diferentes nombres de constante, podremos instanciar multiples veces la clase Date(). Con el objetivo de poder calcular la unidad de tiempo que transcurrio entre una fecha y la otra.
+● const fechaInicial = new Date(1996, 7, 14);
+  const fechaFinal = new Date(2005, 8, 30);
+
+Cada fecha instanciada permite utilizar cada parte que compone su unidad de tiempo, de forma individual. Esto se logra con los diferentes métodos disponibles.
+● const fechaInicial = new Date(1996, 7, 14);
+
+● fechaInicial.getDate(): Retorna el día del mes (1-31) de la fecha.
+● fechaInicial.getDay(): Retorna el día de la semana (0-6) de la fecha, donde 0 es domingo y 6 es sábado.
+● fechaInicial.getMonth(): Retorna el mes (0-11) de la fecha, donde 0 es enero y 11 es diciembre.
+● fechaInicial.getFullYear(): Retorna el año (año completo) de la fecha.
+
+El caso de la fecha instanciada corresponde al día 14 de Julio, pero el método getMonth() retorna el número de mes, a través de una estructura interna que asigna el valor 0 para el mes de enero, y el valor 11 para el mes de diciembre. Si necesitamos mostrar el número de mes en la
+aplicación, simplemente se le suma 1 al valor que retorna getMonth(). Así, se resuelve el tema.
+
+● const fechaInicial = new Date(1996, 7, 14);
+      fechaInicial.getMonth() + 1;
+
+Otra alternativa al ejemplo visto en las últimas diapositivas, es instanciar la fecha utilizando el formato ISO DATE y luego recurrir al método .toLocaleString(), que nos permite formatear el parámetro de salida de la información. Así, se consigue ver el mes correspondiente en formato nombre.
+
+● const fechaInicial = new Date("1996-07-14");
+
+  const opciones = { month: 'long'};
+  const fechaFormateada = fechaInicial.toLocaleString('es-AR', opciones);
+
+Este es un ejemplo completo del uso del método .toLocaleString() para obtener: el valor de cada unidad de tiempo de una fecha,
+formateado a una configuración regional específica y a un tipo de datos también específico:
+
+●       const fechaInicial = new Date("1996-07-14");
+        const opcionesMes = {mont: 'long'};
+        const opcionesDia = {weekday: 'long'};
+        const opcionesFecha = {day: 'numeric'}
+        const opcionesAnio = {year: 'numeric'};
+
+        fechaInicial.toLocalString('es-AR', opcionesMes);
+        fechaInicial.toLocalString('es-AR', opcionesDia);
+        fechaInicial.toLocalString('es-AR', opcionesFecha);
+        fechaInicial.toLocalString('es-AR', opcionesAnio);
+
+.getTime()
+El método .getTime() retorna la fecha
+instanciada en formato milisegundos. Para calcular un período de tiempo entre dos fechas:
+1. Se pueden instanciar, y luego restar la fecha más reciente a la fecha más lejana, mediante la invocación de este método.
+2. Luego, a la diferencia retornada en
+milisegundos, de la divide por 1000 (1 segundo = 1000 milisegundos). Finalmente, se multiplica por el valor de tiempo máximo de cada unidad de tiempo, hasta llegar a la unidad de tiempo deseada.
+3. La diferencia la dividimos por el número de milisegundos en un día (1000 milisegundos por segundo * 60 segundos por minuto * 60 minutos por hora * 24 horas por día), para obtener la diferencia en días.
+4. Para calcular la diferencia en semanas, meses y años, podemos usar un enfoque similar pero dividir la diferencia en milisegundos por el número de milisegundos en una semana, mes o año, respectivamente.
+
+let fecha1 = new Date('2023-03-28');
+let fecha2 = new Date('2023-04-05');
+
+const diferencia = fecha2.getTime() - fecha1.getTime();
+const dias = (diferencia / (1000 * 60 * 60 * 24));
