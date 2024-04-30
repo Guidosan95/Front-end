@@ -29,7 +29,7 @@
 - div se utiliza para maquetar
 
 - <a href=""></a> (el valor de href el es del destino al que nos va a llevar. En el medio de ambas <a> se coloca el nombre del destino.) Vinculo absolutos, son los que nos dirigen fuera del proyecto. Vinculos relativos, son aquellos vinculos que nos dirigen dentro de nuestro proyecto
-
+ 
 - target y title: target: Lo que nos permite hacer es indicar donde va a abrir, si en la misma pestaña o ventana o no. (valor: "_blank" nos abre en otra pestaña. El valor: "_self" abre el link en la misma pestaña o venta.)
 
 - Para Trabajar con Anclas. Lo que debemos hacer es colocar, por ej: En una lista, un <a href="#(y el nombre asignado)"></a>. En la informacion, anidamos colocando otro <a> pero en este caso en vez de usar href, utilizamos un id. Y de la misma manera anterior, colocamos el mismo nombre pero sin el #.
@@ -269,3 +269,9 @@ el control src nos permite pausar, adelantar, o atrasar el audio o el video
 También podemos unir celdas o filas a través de dos atributos:
 ● En el caso de unir celdas de diferentes filas, usaremos "rowspan".
 ● Para unir celdas de diferentes columnas, utilizaremos "colspan".
+
+Pseudo-clase :root
+
+Necesitamos un lugar para poner nuestras propiedades personalizadas. Podemos especificar propiedades personalizadas dentro de cualquier regla de estilo, pero muchas veces, esto no es conveniente porque la especificación de propiedades personalizadas presenta desafíos de mantenibilidad y legibilidad CSS.
+
+La pseudo-clase :root representa el nivel más alto de nuestros documentos HTML. Este selector es un buen lugar donde poner nuestras propiedades personalizadas porque podremos sobrescribir los valores de las propiedades personalizadas a través de otros selectores CSS que tienen una mayor especificidad.
