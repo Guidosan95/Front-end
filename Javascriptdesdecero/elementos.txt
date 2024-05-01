@@ -496,3 +496,165 @@ let fecha2 = new Date('2023-04-05');
 
 const diferencia = fecha2.getTime() - fecha1.getTime();
 const dias = (diferencia / (1000 * 60 * 60 * 24));
+
+// Arrays:
+Los arrays permiten definir, bajo una misma estructura, una serie de valores utiles dentro de nuestra aplicacion. 
+En JS se utilizan dos tipos de arrays:
+● Arrays de elementos.
+● Arrays de objetos.
+
+Ante la necesidad de crearu un array que almacene diferentes valores, en cada uno de sus indices, lo mas apropiado sera estructrar un array de obejtos que aporte orden y entendimiento:
+Por ej:
+        const persona = [ 'Fer', 'Nico', 'July', 'Laura', 'Greta'];
+
+        const pouporri = ['Moon', 21, 75, true, personas];
+
+Cada valor almacenado en un array, obtiene una poscion numerica. Siempre a partir del 0(cero), y se incrementa en un digito por cada nuevo valor contenido en el array.
+Por Ej:
+        const persona = [ 'Fer', 'Nico', 'July', 'Laura', 'Greta']
+        // posicion         0      1        2       3        4
+
+Para leer un valor que este almacenado en el array, simplemente se define el nombre del array y se encierra entre corchetes con el valor numerico de la posicion en la que se encuentra:
+Por Ej:
+        const persona = [ 'Fer', 'Nico', 'July', 'Laura', 'Greta']
+        // posicion         0      1        2       3        4
+
+        persona[3];            //devuelve 'Laura'
+
+Ver contenido del array y depurarlo
+Cuando trabajamos con arrays, la forma más efectiva de ver su contenido y depurarlo, es utilizar el objeto console, y su método .table(). Este método representa un array en DevTools > Console, que muestra en formato tabular, y representa sus índices en una segunda columna.
+Por Ej:
+        const paisesAmericaSur = ["Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"," Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"];
+        
+        console.table(paisesAmericaSur);
+
+Contabilizar el total de elementos almacenados
+Si se necesita contabilizar el total de elementos que tiene almacenados, se puede recurrir a la propiedad .length.  Retornará un valor numérico, correspondiente al total de elementos almacenados en el array.
+Por Ej:
+        const paisesAmericaSur = ["Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"," Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"];
+        
+        console.log("Total de paises en el arreglo: ", paisesAmericaSur.length);
+
+        //IMPRIMIRA:
+        //Total de paises en el arreglo: 12
+
+Métodos de arrays
+Además de la propiedad .length, los arreglos cuentan con una serie de métodos que permiten operar con sus valores. A través de ellos, es posible:
+● Agregar o quitar elementos.
+● Modificar elementos existentes.
+● Cambiar elementos del arreglo.
+● Ordenar de forma ascendente o descendente.
+● Fusionar arreglos.
+● Buscar, filtrar, reestructurar, calcular, validar.
+● Crear nuevos arreglos a partir de uno
+existente.
+Los métodos están en constante evolución; por lo tanto, siempre nos conviene seguir las tendencias del mercado para ver aquellos nuevos métodos que surgen y su impacto en el manejo de arrays.
+
+Metodos de Arrays: 
+
+.push:  Agrega un nuevo elemento al final del array. Agrega un nuevo elemento al final del array. Este elemento se debe agregar dentro de los parentesis del metodo.
+Por Ej:
+       const persona = [ 'Fer', 'Nico', 'July']; 
+       persona.push("Laura");
+       // El array contendra, ahora: Fer, Nico, July, Laura.
+
+.unshit:  Agrega un nuevo elemento al principio del array. Agrega un elemento nuevo al inicio del array. Este elemento se debe agregar dentro de los parentesis del metodo.
+Por Ej:
+        const persona = [ 'Fer', 'Nico', 'July', 'Laura'];
+        persona.unshift("Greta");
+        // El array contendra, ahora: Greta, Fer, Nico, July, Laura.
+
+.pop:  Quita el último elemento del array. No es necesario definir ningun parametro, ya que su accion es automatica
+Por Ej:
+        const persona = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        persona.pop();
+        //El array contendra, ahora: Greta, Fer, Nico, July.
+
+.shift:  Quita el primer elemento del array. No es necesario definir ninguno parametro, ya que su accion es automatica
+Por Ej:
+        const persona = [ 'Greta','Fer', 'Nico', 'July'];
+        persona.shift();
+        //El array contendra, ahora: Fer, Nico, July.
+
+.slice: Crea un nuevo array con elementos de otro array, de forma parcial o total. Recibe dos parametros:
+1. El primero, corresponde al índice del array desde donde inicia el proceso mientras que,
+2. el segundo parámetro, hasta qué índice debe “rebanar”.
+Por Ej:
+       const persona = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+       const hijos = persona.slice(2,4);
+       //El array 'hijos' contendra: Nico, Laura
+El método .slice() puede recibir solo un parámetro. Esta condición sólo debe aplicarse si se desea generar un nuevo array a partir de una posición determinada, hasta el final del array en cuestión.  
+Por Ej:
+        const persona = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        const otraPersonas = persona.slice(2);
+        //El array 'otrosPersonas' contendra: Nico, July, Laura.
+
+.splice: Quita uno o más elementos del array de cualquier posición. También reemplaza uno o más elementos de un array. Recibe dos parámetros:
+1. En el primer parámetro, le indicamos el índice del elemento a remover.
+2. En el segundo, cuántos elementos quitaremos.
+En el ejemplo del siguiente slide, solo removemos un elemento del array: removemos a ‘Fer’ del array personas.
+Si volvemos a consultar el array, veremos que dicho elemento no figura más. Esto hace que .splice() sea definido como un método destructivo, porque modifica el array original.
+Por Ej:
+        const personas = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        const persona = personas.splice(1, 1);
+        // El array 'persona' contendra: Fer,
+        // En el array 'personas' quedaran: Greta, Nico, July, Laura.
+
+El método .splice(), también es utilizado para reemplazar elementos dentro de un array, por un nuevo elemento. En este otro ejemplo, reemplazamos el índice 2 del array “Nico”, por el elemento “Nicolás”. Si queremos “capturar” el elemento reemplazado en el array personas, anteponemos a la cláusula personas.splice(...) una constante, donde quedará capturado el valor que cambiamos: “Nico”.
+Por Ej:
+        const personas = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        const persona = personas.splice(2, 1, 'Nicolas');
+        // En el array 'personas' quedaran: Greta, Fer, Nicolas, July, Laura
+        // En el array 'persona' quedara guardado el dato: Nico.
+
+.indexOf: Permite identificar si un elemento existe, o no, dentro del array. Retorna true o false, según el resultado. Si existe, nos retorna su índice actual; si no, retornará -1. Es una opción muy útil, que se puede aprovechar para identificar el índice de un elemento que deseamos quitar. 
+Por Ej: 
+        const personas = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        const idx = persona.indexOf("Laura");
+        // idx tendra como valor: 4
+
+En el segundo ejemplo, retorna como resultado -1, porque el nombre a identificar no se encuentra dentro de los elementos del array en cuestión.
+Por Ej:
+        const personas = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        const idx = persona.indexOf("Laica");
+        // idx tendra como valor: -1
+Ejemplo aplicando combinacion de .indexOf y splice:
+        const personas = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+
+        let aQuitar= prompt("Ingresa el nombre de la persona que deseas quitar: ");
+
+        const resultado = personas.indexOf(aQuitar);
+
+        if (resultado === -1){
+                console.warn("La persona a quitar no se encuentra cargada en el array");
+        } else{
+                personas.splice(aQuitar, 1);
+        }
+        console.log(resultado);
+
+.includes: Permite identificar si existe o no un elemento dentro de un array. A diferencia de .indexOf(), .includes() retorna solamente true, si existe, o false, si no existe.
+Por Ej:
+        const personas = [ 'Greta','Fer', 'Nico', 'July', 'Laura' ];
+        const idx = persona.includes("Laica");
+        // idx tendra como valor: false
+
+.concat:  Agrega un nuevo elemento al final del array. Este método permite concatenar dos arrays en uno solo. En el siguiente ejemplo, se concatenan el array llamado paisesAmericaDelSur con paisesAmericaDelNorte para conformar un nuevo array cuyo nombre es paisesAmerica.
+De acuerdo al orden que deseamos para los elementos en el array, es como debemos utilizar los arrays a fusionar. El resultado del ejemplo, tendrá en los primeros lugares del nuevo array, los elementos de paisesAmericaDelSur.
+Por Ej: 
+        const paisesAmericaSur = ["Argentina ", "Bolivia ", "Brasil ", "Chile ", "Colombia ", "Ecuador "," Guyana ", "Paraguay ", "Perú ", "Surinam ", "Uruguay ", "Venezuela "];
+        const paisesAmericaDelNorte = ["Canada ", "Estados Unidos ", "Mexico ", "Alaska"];
+        const paisesAmerica= paisesAmericaDelSur.concat(paisesAmericaDelNorte);
+        alert(paisesAmerica);
+
+.join:  Agrega un nuevo elemento al principio del array. El método .join() fusiona todos los elementos de un array en una cadena de texto (string). Entre los paréntesis, podemos definir un carácter a usar para separar los elementos unos de otros.
+Por Ej:
+        const paisesAmericaSur = ["Argentina ", "Bolivia ", "Brasil ", "Chile ", "Colombia ", "Ecuador "," Guyana ", "Paraguay ", "Perú ", "Surinam ", "Uruguay ", "Venezuela "];
+        paises.join(" - ");
+        // Argentina - Bolivia - Brasil, etc.
+        paises.join(", ");
+        // Argentina, Bolivia, Brasil, etc
+        paises.join(" | ");
+        // Argentina | Bolivia | Brasil , etc
+        
+.sort:  Ordena de forma ascendente los elementos de un array.
+.reverse:  Revierte el orden de los elementos de un array.

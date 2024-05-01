@@ -9,3 +9,9 @@ frase.innerText= espanol;
 frase.innerText= frances;
 frase.innerText= ingles;
 
+const paisesAmericaSur = ["Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"," Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"];
+        const paisesAmericaDelNorte = ["Canada", "Estados Unidos", "Mexico", "Alaska"];
+        const paisesAmerica= paisesAmericaSur.concat(paisesAmericaDelNorte);
+        alert(paisesAmerica);
+        console.log(paisesAmerica);
+
