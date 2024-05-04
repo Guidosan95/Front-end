@@ -503,6 +503,11 @@ En JS se utilizan dos tipos de arrays:
 ● Arrays de elementos.
 ● Arrays de objetos.
 
+// innerText = Renderiza como texto 
+// innerHTML = Renderiza como HTML 
+// para elegir un elemento dentro del decoumento, debemos utilizar = document.querySelector(y el elemento de HTML que queramos seleccionar utilizando '')
+// new es para crear un objeto. Date() crea una fecha que es la del sistema operativo
+
 Ante la necesidad de crearu un array que almacene diferentes valores, en cada uno de sus indices, lo mas apropiado sera estructrar un array de obejtos que aporte orden y entendimiento:
 Por ej:
         const persona = [ 'Fer', 'Nico', 'July', 'Laura', 'Greta'];
@@ -658,3 +663,5 @@ Por Ej:
         
 .sort:  Ordena de forma ascendente los elementos de un array.
 .reverse:  Revierte el orden de los elementos de un array.
+
+Para crear una matriz o un array multiple, debo hacer un array de la siguiente manera
