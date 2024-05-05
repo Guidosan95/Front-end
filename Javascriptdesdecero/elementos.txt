@@ -664,4 +664,190 @@ Por Ej:
 .sort:  Ordena de forma ascendente los elementos de un array.
 .reverse:  Revierte el orden de los elementos de un array.
 
-Para crear una matriz o un array multiple, debo hacer un array de la siguiente manera
+Para crear una matriz o un array multiple, debo hacer un array de la siguiente manera:
+var persona = [
+        ["Jose", "Sanchez", 49],
+        ["Juana", "Lopez", 23],
+        ["Rodrigo", "Perez", 30],
+        ["Laura", "Rodriguez", 60],
+(para visualizar alguna de las personas dentro del array, deberia hacer lo siguiente)
+        console.log("Hola soy: " + persona[3(que es la posicion en la que se encuentra "Laura")][0(Que seria el nombre de Laura)] + " " + persona[3][1] + " y tengo " + persona[3][2] + " años")
+
+];
+
+otra de las formas de ingresar al array es de la siguiente manera, con un bucle, mostrando el nombre de todos
+        for (var i = 0; i < persona.length; i ++){
+                console.log("Hola soy " + persona[i][0(que vendria a ser la posicion del nombre)])
+        };
+
+// OBJETOS
+Cuando hablamos de objetos, nos referimos a entidades que representan conceptos reales o abstractos en un formato digital.
+Cada objeto tiene un estado y un comportamiento:
+● el estado es definido por sus atributos mientras que,
+● el comportamiento, se define por sus métodos.
+Los objetos se relacionan entre sí a través de sus mensajes y sus métodos y, su uso en el desarrollo de software, permite clarificar de forma efectiva aquellas tareas que definimos en cada línea de código que le da vida a nuestra aplicación.
+
+//Atributos y métodos
+Cada objeto tiene un estado y un comportamiento:
+● el estado es definido por sus atributos mientras que,
+● el comportamiento, se define por sus métodos.
+Los objetos se relacionan entre sí a través de sus mensajes y sus métodos
+
+//Propiedades y métodos
+Entonces:
+● Cada característica (o atributo) que representa a estos objetos dentro del ecosistema de software, suele llamarse propiedad.
+● Cada comportamiento de estos objetos, es representado por un método.
+
+//Entidad abstracta
+Se puede pensar en, por ejemplo, una computadora. Si bien es algo físico, suele tratarse como una entidad abstracta por sus limitaciones o nicho específico.
+Sus características pueden ser:
+● Marca.
+● Modelo.
+● Posee display.
+● Posee teclado.
+● Posee mouse pad o puntero.
+● Sistema operativo.
+● Batería.
+
+//Objeto literal 
+Cuando se define un objeto literal, éste se debe crear a través de la palabra reservada const.
+El nombre que le asignamos suele definirse con su primera inicial en mayúsculas, y debe ser una palabra (sustantivo), expresado en singular.
+Su estructura de datos, se debe encerrar entre las llaves de bloque.
+
+Aquí tenemos una representación rápida del objeto literal denominado Persona, con algunos atributos (propiedades), que lo describen.
+Cada propiedad llevará un valor asignado. Este valor puede ser expresado en cualquier tipo de dato (string, boolean, number).
+Para definir múltiples propiedades, cada una con su valor, utilizamos la coma (,) como separador.
+Además de los datos del tipo string y number, podemos agregar a sus propiedades, otros valores como ser un array de elementos, un objeto interno, entre otros tantos.
+Por Ej:
+        const Persona = {
+                nombreCompleto: '',
+                edad: 0,
+                profesion: '',
+                genero: ''
+        }
+
+Para leer el valor de alguna de las propiedades, simplemente escribimos Objeto.propiedad. Así se obtiene el valor almacenado.
+Para cambiarlo, se utiliza esta misma estructura y se suma el operador de asignación igual (=), más el nuevo valor.
+        console.log(Persona.nombreCompleto);
+
+        console.log(Persona.profesion);
+
+        Persona.edad= 21;
+
+// Arreglos de objetos
+En JavaScript, es posible crear arrays de objetos literales. Estas estructuras son las más apropiadas para representar un conjunto de objetos usualmente del mismo tipo, y poder trabajar con ellos de forma efectiva.
+Este orden permitirá trabajar con los datos de forma prolija, aprovechando métodos de búsqueda y transformación.
+
+// CICLOS DE ITERACION (BUCLES)
+JavaScript cuenta cláusulas denominadas ciclos de iteración. Permiten generar tareas de forma repetitiva, de acuerdo a nuestra necesidad.
+Los ciclos de iteración, se dividen en dos:
+● Ciclos de iteración por conteo.
+● Ciclos de iteración por repetición.
+
+// Ciclos de iteración por conteo (for)
+Este es el ciclo más conocido por todos: el ciclo for. Este es ideal para poder recorrer un arreglo, o array, y realizar diferentes operaciones sobre los datos, objetos, elementos o cualquier otro conjunto de características que conformen ese arreglo.
+Tener presente que, el ciclo for, no nos limita a utilizarlo solo para recorrer arreglos. También se puede implementar para iterar dentro de un rango de valores estáticos, inicial y final, previamente definidos.
+Si bien, el uso del ciclo for se puede aprovechar muy bien con arrays, estos cuentan con otros ciclos y métodos más modernos que permiten recorrerlos mucho más rápido.
+Estructura paso a paso
+El ciclo for cuenta con una estructura configurable a través de sus paréntesis, en la cual recibe tres parámetros:
+1. Valor inicial.
+2. Condición.
+3. Incremento.
+
+Por Ej:
+
+const paisesAmericaSur = ["Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"," Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"];
+
+
+    valor incial        condicion           incremento
+        |                  |                    |
+for(let i = 0; i < paisesAmericaDelSur.length; i++){
+        console.log(paisesAmericaDelSur[i]);
+}                                       |
+                                El valor cambiante de "i", nos permite
+                                acceder a cada elemento del array.
+
+1. Valor inicial: se declara una variable,
+usualmente i, con el valor inicial 0 (cero).
+Si utilizamos el ciclo for para iterar un array,
+la variable i será la que tendrá un valor
+numérico, cambiante, que podremos utilizar
+para acceder a los diferentes elementos del
+array que estamos iterando.
+2. Análisis de una condición: en el segundo
+parámetro, se evalúa una condición; en el
+ejemplo del slide anterior, se valida que el
+valor que posee i, sea menor al total de
+elementos del array. Solo si esta condición se
+cumple, se ejecutará el código que se defina
+internamente dentro de las llaves de bloque
+del ciclo for.
+3. Incremento: el tercer parámetro, incrementa
+en un dígito el valor que posea i. Esto
+reinicia la iteración sobre el arreglo, debiendo
+previamente volver a validar la condición
+definida como segundo parámetro.
+Si la condición del segundo parámetro se
+sigue cumpliendo, seguimos iterando el array
+y trabajando con el siguiente elemento de
+este
+
+// Interrupción del ciclo
+Cláusula break
+La cláusula break, permite interrumpir el ciclo de
+iteración. Por ejemplo, podemos evaluar una
+condición determinada y, si esta se cumple,
+interrumpirlo.
+En nuestro ejemplo, interrumpimos la iteración si
+el valor de i, es igual a 4.
+
+        for(let i = 0; i < paisesAmericaDelSur.length; i++){
+                console.log(paisesAmericaDelSur[i]);
+                if (i === 4){
+                        break
+                }
+        } 
+
+// Cláusula continue
+La cláusula continue, permite saltear un paso
+del ciclo de iteración.
+De igual forma, se puede evaluar una condición
+determinada y si, esta se cumple, aplicar
+continue
+
+        for(let i = 0; i < paisesAmericaDelSur.length; i++){
+                console.log(paisesAmericaDelSur[i]);
+                if (i === 4){
+                        continue
+                }
+        } 
+
+// Ciclo for…of
+El ciclo for...of ofrece una forma de iterar más simple
+que la utilizada con el ciclo for convencional. 
+        const paisesAmericaSur = ["Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"," Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"];
+        for (let oais of paisesAmericaDelSur){
+                console.log(pais) // mostrara cada elemento contenido en el array
+        } 
+
+// Ciclo de iteración por repetición (while)
+El ciclo de iteración while repite un bloque de código mientras una condición sea verdadera.
+Antes de cada iteración, se evalúa la condición. Si es verdadera, ejecuta el bloque de código; si no, detiene el ciclo.
+Siempre debemos tener presente que, este ciclo de iteración, debe controlar dentro del bloque de código el cambio de la condición que lo hace funcionar para, en algún momento, poder interrumpir su ejecución. Si no lo hace, desencadenará un bucle infinito.
+Por Ej: 
+        let contador = 0
+        while (contador < 5){
+                console.log("Contador: " + contador)
+                contador ++
+        }
+
+// Ciclo de iteración por repetición (do-while)
+El ciclo de iteración do-while repite un bloque de código mientras una condición sea verdadera.
+Aquí, la condición se analiza al final de cada iteración, y se debe contemplar la misma lógica que con el ciclo while, para no generar un loop infinito
+
+Diferencia entre while y do-while
+La diferencia de funcionamiento entre los ciclos while y do-while es que, while, puede ejecutarse cero veces, si la condición que evalúa da como resultado false.
+En cambio, do-while se ejecutará al menos una vez, dado que la condición que evalúa, lo hace al final de la iteración.
+
+// interrupcion del ciclo
+Ambos ciclos de iteración por repetición tienen la posibilidad de integrar, en el bloque de código de ejecución, las cláusulas break y continue (como se vió en el ciclo for, que permite interrumpir o saltear una iteración, en base a una condición válida).
