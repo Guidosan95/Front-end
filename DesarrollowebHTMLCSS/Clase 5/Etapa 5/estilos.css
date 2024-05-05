@@ -58,6 +58,23 @@ li a{
     text-decoration: none;
     color: black;
 }
+nav ul li a#servicio{
+    display: flex;
+}
+nav ul li ul.submenu{
+    display: block;
+    padding: 0;
+}
+nav ul li ul.submenu li#serv{
+    padding: 0;
+}
+nav ul li ul.submenu li a{
+    display: block;
+    padding: 10px 0 10px 0px;
+}
+/* nav ul li ul.submenu li a:hover{
+    display: block;
+}
 /*Header*/
 header{
     display: flex;
