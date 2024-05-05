@@ -826,7 +826,7 @@ continue
 El ciclo for...of ofrece una forma de iterar más simple
 que la utilizada con el ciclo for convencional. 
         const paisesAmericaSur = ["Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"," Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"];
-        for (let oais of paisesAmericaDelSur){
+        for (let pais of paisesAmericaDelSur){
                 console.log(pais) // mostrara cada elemento contenido en el array
         } 
 
@@ -851,3 +851,8 @@ En cambio, do-while se ejecutará al menos una vez, dado que la condición que e
 
 // interrupcion del ciclo
 Ambos ciclos de iteración por repetición tienen la posibilidad de integrar, en el bloque de código de ejecución, las cláusulas break y continue (como se vió en el ciclo for, que permite interrumpir o saltear una iteración, en base a una condición válida).
+
+Si se depura una aplicación de software, el
+método console.table() permite ver tabulados
+los objetos de este array. Mucho más cómodo y
+práctico que el clásico método .log(). 
