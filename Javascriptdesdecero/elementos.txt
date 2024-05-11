@@ -852,33 +852,19 @@ En cambio, do-while se ejecutará al menos una vez, dado que la condición que e
 // interrupcion del ciclo
 Ambos ciclos de iteración por repetición tienen la posibilidad de integrar, en el bloque de código de ejecución, las cláusulas break y continue (como se vió en el ciclo for, que permite interrumpir o saltear una iteración, en base a una condición válida).
 
-Si se depura una aplicación de software, el
-método console.table() permite ver tabulados
-los objetos de este array. Mucho más cómodo y
-práctico que el clásico método .log(). 
+Si se depura una aplicación de software, el método console.table() permite ver tabulados los objetos de este array. Mucho más cómodo y práctico que el clásico método .log(). 
 
 //
 Propiedades de acceso a HTML
-Las tres propiedades más utilizadas para
-manipular contenido de elementos HTML son:
+Las tres propiedades más utilizadas para manipular contenido de elementos HTML son:
 ● innerText: Permite acceder, desde JS, al texto definido dentro del elemento HTML. Podemos leerlo y/o modificarlo, según nuestro interés.
-● textContent: Aporta el mismo resultado que la propiedad anterior, pero textContent es más moderno (llegó en
-2015). Su aporte es poder ser más claro, en cuanto al nombre de la propiedad refiere, a diferencia de
-innerText, el cual solía confundirse su funcionalidad con el nombre de la siguiente propiedad que
+● textContent: Aporta el mismo resultado que la propiedad anterior, pero textContent es más moderno (llegó en 2015). Su aporte es poder ser más claro, en cuanto al nombre de la propiedad refiere, a diferencia de innerText, el cual solía confundirse su funcionalidad con el nombre de la siguiente propiedad que
 veremos.
-● innerHTML: Esta propiedad también permite leer el texto de un elemento HTML pero, como su nombre lo indica,
-realmente está enfocada a que podamos leer/escribir uno o más bloques HTML en etiquetas del tipo
-contenedor (como por ejemplo, el tag <div>).
-Cada una aporta lo suyo y se utiliza para
-determinados casos específicos.
+● innerHTML: Esta propiedad también permite leer el texto de un elemento HTML pero, como su nombre lo indica, realmente está enfocada a que podamos leer/escribir uno o más bloques HTML en etiquetas del tipo contenedor (como por ejemplo, el tag <div>). Cada una aporta lo suyo y se utiliza para determinados casos específicos.
 
 innerHTML
-Imaginemos que tenemos un <div>, el cual
-oficia como tag contenedor de un elemento
-HTML del tipo <h2> (subtítulo), y otro
-elemento <p>.
-En el <div>, definimos el atributo ID, con un
-valor para luego enlazarnos desde JS.
+Imaginemos que tenemos un <div>, el cual oficia como tag contenedor de un elemento HTML del tipo <h2> (subtítulo), y otro elemento <p>.
+En el <div>, definimos el atributo ID, con un valor para luego enlazarnos desde JS.
 Por Ej:
         <div id='contenedor'>
                 <h2>Subtitulo del div</h2>
@@ -890,86 +876,41 @@ Por Ej:
         const divContenedor = document.getElementById("contenedor");
         console.log(divContenedor.innerText);
 
-innerHTML, a diferencia de las otras propiedades,
-está pensada para escribir bloques de código
-HTML desde JS, de forma dinámica. De esta
-forma, se pueden generar uno o más elementos
-HTML en bloque, de forma dinámica, mediante el
-atributo innerHTML para escribirlos en el
-documento HTML.
-Además, podremos concatenar (en el HTML que
-vamos a generar) variables, constantes o arrays
-JS, para así poder mostrar su valor en el
-documento HTML. Esto es lo que se denomina: la
-Web Dinámica.
+innerHTML, a diferencia de las otras propiedades, está pensada para escribir bloques de código HTML desde JS, de forma dinámica. De esta forma, se pueden generar uno o más elementos
+HTML en bloque, de forma dinámica, mediante el atributo innerHTML para escribirlos en el
+HTML.
+Además, podremos concatenar (en el HTML que vamos a generar) variables, constantes o arrays JS, para así poder mostrar su valor en el documento HTML. Esto es lo que se denomina: la Web Dinámica.
 Por Ej:
         divContenedor.innerHTML = <h2>Subtitulo generado por JS</h2> +
                                   <p>Y tambien un parrafo generado desde JS</p>
 
 // Query Selector 
-CSS utiliza selectores para personalizar los
-estilos gráficos de los elementos HTML. Estos
-selectores se dividen en tres tipos principales:
+CSS utiliza selectores para personalizar los estilos gráficos de los elementos HTML. Estos selectores se dividen en tres tipos principales:
 ● Elemento.
 ● ID.
 ● Clase genérica.
-Veamos la tabla en la siguiente diapositiva, con el
-detalle de cada uno de ellos.
+Veamos la tabla en la siguiente diapositiva, con el detalle de cada uno de ellos.
 
 // Manejo de eventos
-Aquí tenemos un resumen de las diferentes
-formas que podemos manejar eventos dentro de
-una aplicación JavaScript:
-1. Atributos on: Forman parte de los elementos HTML. Se
-conocen con este nombre porque, en el nombre
-de cada evento, se antepone el término on.
-Se definen dentro del elemento HTML, y se les
-asocia una función que se ejecuta ante la
-ocurrencia de ese evento
-2. Eventos on: eventos on
-Los eventos on son la evolución de los
-atributos on.
-Se manejan íntegramente desde JS.
-Debemos enlazarnos con un elemento
-HTML desde JS, y luego utilizar el evento
-on, al que le definimos una función como
-referencia o declaramos una función
-anónima.
+Aquí tenemos un resumen de las diferentes formas que podemos manejar eventos dentro de una aplicación JavaScript:
+1. Atributos on: Forman parte de los elementos HTML. Se conocen con este nombre porque, en el nombre de cada evento, se antepone el término on. Se definen dentro del elemento HTML, y se les asocia una función que se ejecuta ante la ocurrencia de ese evento
+2. Eventos on: eventos on Los eventos on son la evolución de los atributos on.
+Se manejan íntegramente desde JS. Debemos enlazarnos con un elemento HTML desde JS, y luego utilizar el evento
+on, al que le definimos una función como referencia o declaramos una función anónima.
 3. Event Listener: eventos on
-Los eventos on son la evolución de los
-atributos on.
+Los eventos on son la evolución de los atributos on.
 Se manejan íntegramente desde JS.
-Debemos enlazarnos con un elemento
-HTML desde JS, y luego utilizar el evento
-on, al que le definimos una función como
-referencia o declaramos una función
-anónima.
+Debemos enlazarnos con un elemento HTML desde JS, y luego utilizar el evento on, al que le definimos una función como referencia o declaramos una función anónima.
 
 // Funciones anónimas
-Una función anónima es una forma
-diferente de escribir una función. Se
-puede declarar una constante y definir
-que ésta sea igual a una función
-anónima, o se puede asignar una
-función anónima a un evento, sin tener
-que definir un nombre.
+Una función anónima es una forma diferente de escribir una función. Se puede declarar una constante y definir que ésta sea igual a una función anónima, o se puede asignar una función anónima a un evento, sin tener que definir un nombre.
 
 //Asignar múltiples eventos
-Cuando tenemos un listado de elementos que
-repiten su estructura, como ser un listado de
-productos con un botón de acción para cada uno
-de ellos, tenemos que pensar en la asignación de
-eventos múltiples a partir de un mismo código.
-Además, es probable que el listado con
-elementos sea dinámico, por lo tanto, es
-imposible que desarrollemos un evento dedicado
-para cada uno de los elementos en cuestión.
+Cuando tenemos un listado de elementos que repiten su estructura, como ser un listado de productos con un botón de acción para cada uno de ellos, tenemos que pensar en la asignación de eventos múltiples a partir de un mismo código.
+Además, es probable que el listado con elementos sea dinámico, por lo tanto, es imposible que desarrollemos un evento dedicado para cada uno de los elementos en cuestión.
 
 Pasos a seguir con el método querySelectorAll
-1. El método querySelectorAll es también netamente
-funcional para llegar al mismo resultado de iteración y
-generación de múltiples eventos desde un mismo
-código.
+1. El método querySelectorAll es también netamente funcional para llegar al mismo resultado de iteración y generación de múltiples eventos desde un mismo código.
         <button class = "button btn-agregar">+</button>
         const botonesAgregar = document.querySelectorAll("button.btn-agregar");
         for (boton of botonesAgregar){

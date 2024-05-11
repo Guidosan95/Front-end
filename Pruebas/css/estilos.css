@@ -82,5 +82,6 @@ main div#pro section#img-prof a{
 main div#pro section#img-prof a img:hover{
     border: 5px aliceblue solid;
     width: 200px;
-    
+    visibility: visible;
 }
+
