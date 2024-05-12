@@ -72,6 +72,19 @@ main div#pro section#img-prof img{
    height: auto;
    border-radius: 50%;
 }
+/*main div#pro section#img{
+    opacity: 0;
+}*/
+section#img,
+section#img1,
+section#img2,
+section#img3{
+    opacity: 0;
+}
+/*
+ main div#pro section#img:active{
+    display: block;
+}*/
 main div#pro section#img-prof a{
     
     text-align: center;

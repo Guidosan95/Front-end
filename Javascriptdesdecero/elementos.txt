@@ -916,3 +916,80 @@ Pasos a seguir con el método querySelectorAll
         for (boton of botonesAgregar){
 
         }
+
+Funciones
+Concepto
+En JavaScript, una función es un bloque de
+código reutilizable que realiza una tarea
+específica. Puede aceptar entradas, llamadas
+argumentos, y devuelve un resultado.
+Es la forma de organizar y estructurar el código
+para poder usar la misma lógica en diferentes
+partes de tu programa.
+Definición
+Para definir una función se usa la palabra
+reservada function, se le da un nombre (en el
+ejemplo de la derecha, saludar), se abre y cierra
+paréntesis ().
+Luego, se abren llaves de bloque ({), se escribe el
+cuerpo (el código que queremos ejecutar cuando
+sea invocada) y, por último, se cierra la llave de
+bloque (}).
+Por Ej:
+        function saludar(){
+                alert("Hola! Sou una funcion)
+        }
+
+Características de una función
+● Debe expresar una acción.
+● Debe comenzar con un verbo.
+● Debe expresarse en modo imperativo (o sea,
+dando una orden).
+● Puede ser de nombre simple, o compuesto (en
+formato camelCase). 
+
+Ejecución
+A diferencia del resto del código que escribimos
+hasta aquí, las funciones no se ejecutan si no se
+las llama.
+Para llamarlas, simplemente escribimos su
+nombre junto a los paréntesis, en alguna parte
+del archivo JS, y esta será invocada.
+Por Ej:
+        function saludarUsuario(){
+                console.log("Bienvenid@,", username);
+        }
+        saludarUsuario();
+
+Funciones con parametros
+A todas las funciones se les puede
+pasar uno o más parámetros. Estos no
+son más que variables que existirán
+dentro de dicha función, y que acarrean
+valores que dicha función deberá
+manipular/utilizar internamente.
+Así, podemos armar funciones
+dinámicas que, siguiendo la lógica que
+queramos, pueden generar distintos
+resultados al recibir diferentes valores.
+Por Ej:
+         function saludarUsuario(){
+                console.log("Bienvenid@,", username);
+        }
+        saludarUsuario("July"); //imprime: Bienvenid@, July
+        saludarUsuario("Nico"); //imprime: Bienvenid@, Nico
+        saludarUsuario("Greta"); //imprime: Bienvenid@, Greta
+
+Definir parámetros descriptivos
+La definición del nombre de los parámetros, debe
+tener la misma lógica que cuando creamos
+variables: poseer nombres descriptivos, que
+guíen al desarrollador (nosotros u otro miembro
+del equipo), para que sepa al llamar a esta
+función, qué valor(es) se espera(n) pasarle
+como parámetro(s).
+Por Ej: 
+        function calcularIVA(importe, valorDeIva){
+                console.log("importe final: ", importe * valorDeIva)
+        }
+        calcularIVA(1500, 1.21);

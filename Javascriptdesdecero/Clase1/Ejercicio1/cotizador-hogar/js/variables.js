@@ -1,30 +1,18 @@
-const datosPropiedad = [
-    {tipo:"Casa", fm: 1.009},
-    
-    {tipo:"P.H", fm: 1.005},
-
-    {tipo:"Dto. Edificio", fm: 1.002},
-
-    {tipo:"Barrio Privado", fm: 1.019},
-
-    {tipo:"Oficina", fm: 1.039},
-
-    {tipo:"Local comercial", fm: 1.041},
-
-    {tipo:"Deposito Logistica", fm: 1.092}
-]
-
-const datosUbicacion = [
-    {tipo:"CABA", fm: 1.013},
-    {tipo:"Tandil", fm: 1.004},
-    {tipo:"Costa Atlantica", fm: 1.029},
-    {tipo:"Patagonia Argentina", fm: 1.000}
-]
 
 var fmPropiedad
 var fmUbicacion
 const costoM2 = 1.16
 let m2= prompt('Ingresa los metros cuadrados de la vivienda')
+const propiedades = document.querySelector("#propiedad");
+const ubicaciones = document.querySelector("#ubicacion");
+const inputMetros2 = document.querySelector('input#metros2');
+
+function cargarComboPropiedad(){
+
+};
+function cargarComboUbicacion(){
+
+};
 
 //Vivienda
 
