@@ -993,3 +993,59 @@ Por Ej:
                 console.log("importe final: ", importe * valorDeIva)
         }
         calcularIVA(1500, 1.21);
+
+// Funciones con retorno
+Las funciones con retorno permiten realizar una
+operación dentro de la función en sí, y retornar
+un posible valor o resultado, a través de la
+misma función.
+Para poder retornar un resultado, se debe utilizar
+la palabra reservada return, seguido del valor a
+retornar.
+Por Ej: 
+        function retornarPrecioConIva(importe, valorDeIva){
+                return importe * valorDeIva
+        }
+Características
+Las funciones con retorno pueden, o no, recibir
+parámetros y, cuando son invocadas, el valor que
+retorne puede ser capturado en una variable,
+constante, o directamente mostrado en un
+elemento HTML con el que nos enlazamos desde
+JS.
+Cuando se crean funciones con retorno, es
+importante también que su nombre exprese el
+tipo de función que es.
+
+La palabra reservada return
+Oficia como punto de interrupción dentro de la
+función con retorno, por lo tanto, todo código
+que se escriba después de la palabra return,
+no se ejecutará nunca.
+Cumple el mismo rol de interrupción, que la
+palabra reservada break, que vimos
+oportunamente en ciclos de iteración y con la
+cláusula switch.
+Por Ej:
+         function retornarPrecioConIva(importe, valorDeIva){
+                return importe * valorDeIva;
+
+                console.log("Este mensaje nunca se vera");
+        }
+
+// Variables globales y locales
+En JS existen variables del tipo global, que se
+declaran al inicio de toda aplicación web, y que
+se pueden utilizar libremente, dentro de toda la
+aplicación.
+También existen variables del tipo local, que sólo
+se pueden utilizar dentro de, por ejemplo, una
+función, o un método, en la aplicación web.
+A este tipo de usos se lo denomina: ‘scope’
+Cuando se crea una variable de ámbito local,
+esta no podrá ser utilizada por fuera del ámbito
+donde fue creada; en este ejemplo, dentro de la
+función saludarUsuario().
+Si se intenta acceder a su valor, por fuera de
+dicho ámbito, obtendremos un error de que la
+variable no ha sido definida.

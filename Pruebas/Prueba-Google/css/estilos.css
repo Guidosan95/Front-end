@@ -1,0 +1,111 @@
+@font-face {
+    font-family: googlebolit;
+    src: url(/Productsans/Product\ Sans\ Bold\ Italic.ttf);
+}
+@font-face {
+    font-family: googlebold;
+    src: url(/Productsans/Product\ Sans\ Bold.ttf);
+}
+@font-face {
+    font-family: googleita;
+    src: url(/Productsans/Product\ Sans\ Italic.ttf);
+}
+@font-face {
+    font-family: googlereg;
+    src: url(/Productsans/Product\ Sans\ Regular.ttf);
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: googlereg;
+}
+
+/* Logo */
+div.log{
+    display: flex;
+    justify-content: center;
+}
+div.log section.logo{
+    display: flex;
+    justify-content: center;
+    margin: 150px 0 0 0 ;
+    width: 100%;
+    height: auto;
+}
+div.log section.logo img{
+    width: 350px;
+    height: auto;
+}
+
+/* Busqueda */
+div.search-icon{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+div.search-icon section.search{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+div.search-icon section.search input#busqueda{
+    max-width: 40%;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 40px;
+    border: 2px solid rgb(190, 189, 189);
+}
+
+div.search-icon section.search input#busqueda:hover{
+   
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 0px 15px rgb(155, 155, 155);
+    transition: 300ms;
+}
+
+a.icono{
+    display: block;
+    position: absolute;
+    transform: translateY(60%);
+    left:31%;
+    color: black;
+}
+a.icono:active{
+    color: black;
+}
+
+/* Botones */
+div#buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+
+}
+div#buttons button{
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    
+}
+
+div#buttons button:hover{
+    transition: 300ms;
+    box-shadow: 0 0 7px rgb(155, 155, 155);
+}

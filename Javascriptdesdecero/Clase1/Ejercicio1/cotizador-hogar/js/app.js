@@ -1,36 +1,12 @@
-let fm
-let m2= prompt('Ingresa los metros cuadrados de la vivienda')
-const costom2 = 1.16
-var vivienda = prompt('Ingresar el tipo de propiedad: Casa, P.H, Dto. Edificio, Barrio Privado, Oficina, Local comercial, Deposito logistica  ')
+const datosPropiedad = [{tipo: 'Casa', factor: 1.009},
+                        {tipo: 'P.H.', factor: 1.005},
+                        {tipo: 'Depto. Edificio', factor: 1.002},
+                        {tipo: 'Barrio Privado', factor: 1.09},
+                        {tipo: 'Oficina', factor: 1.079},
+                        {tipo: 'Local Comercial', factor: 1.041},
+                        {tipo: 'Depósito Logística', factor: 1.072}]
 
-switch(vivienda){
-    case "Casa": 
-    fm = 1.009;
-    break;
-
-    case "P.H": 
-    fm = 1.005;
-    break;
-
-    case "Dto. Edificio":
-    fm =  1.002;
-    break;
-
-    case "Barrio Privado":
-    fm =  1.019;
-    break;
-
-    case "Oficina":
-    fm =  1.039;
-    break;
-
-    case "Local comercial":
-    fm =  1.041;
-    break;
-    default:
-    fm= 1.092;
-
-}
-let total = fm * m2 * costom2;
-
-alert('Resultado de la multiplicacion: $ ' + total);
+const datosUbicacion = [{tipo: 'CABA', factor: 1.013},
+                        {tipo: 'Tandil', factor: 1.004},
+                        {tipo: 'Costa Atlántica', factor: 1.029},
+                        {tipo: 'Patagonia', factor: 1.000},]
