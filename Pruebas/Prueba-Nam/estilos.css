@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@keyframes button-btn {
+    from {
+        opacity: 0;
+      }
+    
+      to {
+        opacity: 1;
+      }
+    
+}
 *{
     box-sizing: border-box;
 }
@@ -11,7 +21,7 @@ body{
 nav#nav-bar{
     display: flex;
     width: 100%;
-    background-color: black;
+    background: linear-gradient(grey, 50%,black);
 }
 nav#nav-bar img{
     display: flex;
@@ -32,17 +42,44 @@ nav#nav-bar ul#nav-bar li#nav-bar{
 }
 nav#nav-bar ul#nav-bar li#nav-bar a{
     
-    padding-left: 30px;
-    padding-right: 30px;
     color: white;
     font-size: 16px;
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
     font-family: Montserrat;
+    
 }
+/* Nan a's */
+nav#nav-bar ul#nav-bar li#nav-bar a{
+    padding: 13px 40px;
+}
+nav#nav-bar ul#nav-bar li#nav-bar a.nav-in{
+    color:#00d8ff;
+    
+}
+
+
+
+/* a:hover */
+nav#nav-bar ul#nav-bar li#nav-bar a.nav-in:hover{
+    padding: 10px 35px;
+}
+nav#nav-bar ul#nav-bar li#nav-bar a.nav-me:hover{
+    padding: 10px 30.4px
+}
+nav#nav-bar ul#nav-bar li#nav-bar a.nav-li:hover{
+    padding: 10px 34.1px
+}nav#nav-bar ul#nav-bar li#nav-bar a.nav-pr:hover{
+    padding: 10px 30.3px
+}nav#nav-bar ul#nav-bar li#nav-bar a.nav-qs:hover{
+    padding: 10px 26.6px
+}nav#nav-bar ul#nav-bar li#nav-bar a.nav-pvn:hover{
+    padding: 10px 30.5px
+}
+
 nav#nav-bar ul#nav-bar li#nav-bar a:hover{
     color:#00d8ff;
     transition: 500ms;
-    animation: shine 1.5s ease-out infinite;
+    font-size: 19px;
 }
