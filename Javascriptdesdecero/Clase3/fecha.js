@@ -13,9 +13,16 @@ frase.innerText = fecha.getMonth();
 // creamos una variable para el dia del mes
 let diaMes = fecha.getDate();
 console.log(diaMes);
+if(diaMes < 10){
+    diaMes = '0' + diaMes;
+}
+
 
 let numMes = fecha.getMonth() +1; // Porque JS cuenta desde cero, entonces figura otro numero del mes
 console.log(numMes);
+if(numMes < 10){
+    numMes = '0' + numMes;
+}
 
 let anio = fecha.getFullYear();
 

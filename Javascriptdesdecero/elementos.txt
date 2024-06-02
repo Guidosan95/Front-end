@@ -1049,3 +1049,191 @@ función saludarUsuario().
 Si se intenta acceder a su valor, por fuera de
 dicho ámbito, obtendremos un error de que la
 variable no ha sido definida.
+
+ECMAscript 6    
+El ECMAScript 6 es una definición del lenguaje. En otras palabras, es un conjunto de símbolos y reglas que implementan algunos lenguajes de programación desarrollados por ECMA International.
+El ECMAScript 6 aporta a JavaScript, entre otras cosas, lo siguiente:
+● Mejorar la integridad de los datos.
+● Mejorar gestiones avanzadas en JavaScript
+(como gestión del ámbito).
+● Implementar textos multilínea.
+
+Declaracion de las variables en ES6:
+El estándar ECMAScript 6 introduce dos palabras nuevas para la creación de variables:
+● Mediante la palabra reservada const creamos una variable que no puede redefinirse ni reasignarse (no puede cambiar su posición ni su valor).
+● Mediante la palabra reservada let creamos una variable que no puede redefinirse, pero si reasignarse (solo puede cambiar su valor).
+
+Se recomienda intentar siempre utilizar const. Si se necesita reasignar (es decir, cambiar el valor) de la variable, se puede utilizar let. La palabra var la vamos a dejar como última opción.
+Objeto style y sus propiedades
+● Cada propiedad CSS se trabaja desde JavaScript con el mismo nombre. La única diferencia a tener presente es que, las propiedades CSS con nombre combinado, separado por un guión, (kebab-case), se transforman en propiedades (camelCase).
+Ejemplo:
+     CSS          JS
+border-width borderWidth
+
+● Los valores que asignaremos a cada propiedad CSS, desde JS, deben encerrarse entre comillas.
+
+Acceso a clases CSS
+Prácticamente todo elemento HTML depende
+del uso de clases CSS para adquirir estilos:
+colores, espacios, bordes, ubicación en pantalla,
+entre otros.
+Para este trabajo, JavaScript cuenta con una
+serie de métodos dedicados, que facilitan la
+interacción.
+El siguiente código posee un <div> que oficia de
+card HTML y posee el atributo class con dos
+clases CSS referenciadas.
+Nos enlazamos con el elemento <div> y desde la
+propiedad className, se podrán leer las clases CSS que
+tenga definidas.
+A través de la propiedad .className, es posible vaciar
+todas las clases de un elemento HTML o agregar una
+nueva a las existentes.
+Se debe tener la precaución de dejar un espacio, al
+agregar una nueva clase CSS, porque sino quedará
+pegada a la que exista previamente. Ambas no
+funcionarán como tales.
+
+
+//Manejo de clases con classList
+La propiedad classList permite manejar clases CSS, en un
+elemento HTML, pero en forma de arrays.
+De la misma manera que accedemos a .className,
+podemos hacerlo con .classList aunque, en este caso,
+retorne un array con cada una de las clases integradas en
+un elemento HTML. El elemento HTML textArea con el cual nos
+enlazamos desde JS previamente, brinda a través
+de su propiedad .classList todas las clases
+CSS que posee definidas. Como vemos en el
+gráfico de abajo, todas las clases CSS genéricas
+están representadas en un array. Por lo tanto,
+podríamos acceder a ellas a través del índice que
+generan los arrays sobre sus elementos.
+
+Métodos
+Pero para trabajar con las clases CSS de forma más
+práctica, tenemos una serie de métodos que facilitan
+realizar las operaciones básicas sobre clases CSS.
+Veamos a estos en la siguiente tabla:
+Método Descripción
+.add(“nombre-clase”)                    Agrega una clase CSS al elemento HTML.
+.remove(“nombre-clase”)                 Remueve la clase CSS indicada, del elemento HTML.
+.toggle(“nombre-clase”)                 Si la clase CSS no se encuentra listada en el elemento HTML, la agrega. Si se encuentra, la quita.
+.replace(“clase-vieja”, clase-nueva”)   Permite reemplazar una clase CSS por otra clase CSS en el elemento HTML.
+
+//Introducción al uso de template String + Literals
+Hasta el momento, todo armado de código en el
+que tenemos que intercalar contenido estático
+con contenido dinámico (generado en JS),
+requería que se implemente el manejo del
+operador + para concatenar “textos” + variables.
+Esta tarea no es compleja cuando se trabaja con
+bloques de textos simples, pero al trabajar con
+estructuras complejas como una card HTML -
+donde se debe escribir un título, referenciar la
+ruta de su imagen, agregar una descripción, y
+seguramente manipular el atributo ID de un
+botón-, la concatenación de todo este bloque de
+texto HTML con JS, se complejiza.
+Allí es donde el template String + Literals ayuda
+a simplificar muy bien esta tarea. Veamos cómo
+aplicarlo
+Arrancamos con un ejemplo simple:
+Tenemos un tag HTML <ul>, que debemos llenar
+con elementos que provienen desde JS,
+almacenados en un array.
+Nos enlazamos al tag <ul> desde JS, e iteramos
+el array paises para crear los tags <li>
+dinámicos.
+Nos enlazamos con el elemento <ul> y en
+primera instancia, vaciamos su contenido.
+Luego, utilizando la cláusula for…of iteramos el
+array paises, e intercalamos HTML y la variable
+JS que contiene el nombre de cada elemento del
+array.
+Ahora los realizamos, pero integrando
+Template String + Literals.
+En este escenario, tal vez no se note la diferencia,
+pero en bloques HTML más complejos, sí
+sacaremos grandes ventajas con esta
+funcionalidad.
+Los compañeros ya han explicado lo que hace el operador += en Javascript: simplemente concatenar. No hay más misterio en ello. Usar += donde sea, agrega el contenido de la derecha a la variable de la izquierda. Mientras que usar = asigna el valor de la derecha a la variable de la izquierda, reemplazándolo.
+Por Ej:
+
+        const lista = document.querySelector("ul");
+        lista.innerHTML = "" //vaciamos el tag <ul>
+
+        for (pais of paises){
+                lista.innerHTML +=  `<li>${pais}</li>`
+        }
+
+//Uso de template String + Literals en estructuras complejas
+Ahora nos encontramos con una card
+HTML mucho más compleja, que
+representa la información de un
+producto electrónico. Además, cuenta
+con un botón que permite agregar el
+producto al carrito de compras.
+A su vez, la card HTML utiliza comillas
+dobles para encerrar las clases CSS de
+sus elementos, y texto descriptivo que
+posee comillas simples.
+Por Ej: 
+        <div class="card card-product">
+                <h1>Teclado Bluetooth Logi</h1>
+                <img src="images/teclado-bt-logi.png" alt="Teclado Bluetooth Logi">
+                <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel laboriosam quo mollitia eos libero voluptates iure corporis. Ipsa eveniet qui itaque mollitia molestiae impedit, labore, in temporibus accusantium ex natus.
+                </p>
+                <button class="button button.cart" id="12345"> AGREGAR</button>
+        </div>
+
+Aquí tenemos un array de objetos con mucha
+información en cada uno de ellos.
+Si pensamos en cómo se puede iterar para
+armar cards HTML dinámicas, lo más apropiado
+será crear una función JS con retorno y, en su
+interior, definir la card HTML en formato
+Template String.
+Esta misma función JS, recibe como parámetro un
+objeto literal del array, y utiliza Template Literals
+para intercalar en el HTML, los datos dinámicos
+que provienen de JS.
+Por Ej: 
+        const productosElectronicos = [];
+
+        const producto = {
+                        id: 12345,
+                        titulo: "Teclado Bluetooth Logi",
+                        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel laboriosam quo mollitia eos libero voluptates iure corporis. Ipsa eveniet qui itaque mollitia molestiae impedit, labore, in temporibus accusantium ex natus.",
+                        imagen: "images/teclado-bt-logi.png"
+        }
+
+1. Nos enlazamos al <div> contenedor donde se
+cargarán las cards HTML.
+2. Iteramos el array de productos y, cada
+producto, se pasa como parámetro a la
+función mencionada.
+        const productosElectronicos = [];
+        const divContenedor = document.querySelector("div.container")
+
+        divContenedor.innerHTML = ""
+
+        for (producto of productosElectronicos){
+                divContenedor.innerHTML += retornarHTMLDeProducto(producto)
+        }
+
+3. La función JS utiliza el objeto literal que llega
+como parámetro y, mediante Template
+Literals, encaja cada propiedad de este
+dentro del HTML, retornando un HTML listo
+para representar en pantalla.
+
+        function retornarHTMLDeProducto(producto){
+                return `<div class="card card-product">
+                                <h1>${producto.titulo}</h1>
+                                <img src="${producto.imagen}" alt="${producto.titulo}">
+                                <p>${producto.descripcion}</p>
+                                <button class="button button.cart" id="${producto.id}"> AGREGAR</button>
+                        </div>`
+        }

@@ -5,6 +5,7 @@ const selectPropiedad = document.querySelector("select#propiedad")
 const selectUbicacion = document.querySelector("select#ubicacion")
 const inputMetros2 = document.querySelector("input#metros2")
 const btnCotizar = document.querySelector("button.button.button-outline")
+const span = document.querySelector('#valorPoliza');
 
 const datosPropiedad = [{tipo: 'Casa', factor: 1.009},
                         {tipo: 'P.H.', factor: 1.005},
@@ -63,16 +64,25 @@ function obtenerFmUbicacion(){
 
 
 // Datos 
-btnCotizar.onclick = function(){
-    
+
+function resultadoTotal(){
+    let resultado = '';
     if (obtenerFmPropiedad() && obtenerFmUbicacion() && parseInt(metros2.value)) {
-        let resultado = obtenerFmPropiedad() * obtenerFmUbicacion() * parseInt(metros2.value) * costoM2
+        resultado = obtenerFmPropiedad() * obtenerFmUbicacion() * parseInt(metros2.value) * costoM2
         console.log("Resultado de la Póliza: $ " + resultado);
     } else {
-        console.warn("Hubo un error en los datos ingresados.");
+        console.error("Hubo un error en los datos ingresados.");
     
     }
+    return resultado;
 };
+span.innerHTML= '0.00';
+btnCotizar.addEventListener(
+    'click',
+    function(){
+        span.innerHTML = resultadoTotal();
+    }
+);
 
 cargarComboPropiedad();
 cargarComboUbicacion();
