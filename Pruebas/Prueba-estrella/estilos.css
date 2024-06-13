@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+        @font-face {
+        font-family: starwars;
+        src: url(/Starwarsfont/Starjedi.ttf);
+        }
+        @font-face {
+        font-family: starwar;
+        src: url(/Starwarsfont/SfDistantGalaxyOutline-xoeO.ttf);
+    
+        }
+        body{
+           color: yellow;
+           background-image: url(/Pruebas/Prueba-estrella/img/raphael-nogueira-svbDI1Pq30s-unsplash.jpg);
+           background-color: black;
+       } 
+       audio{
+            position: relative;
+       }
+       
+       .contenedor{
+
+                position: relative;
+                height: 100vh;
+                perspective: 600px;
+                overflow: hidden;
+                
+       }
+       .star-wars{
+            font-family: starwar;
+           text-align: center;
+           position: relative;
+           
+       }
+       .texto-int{
+            font-family: starwars;
+            position: absolute;
+            top: 30%;
+            width:100%;
+            font-size: 20px;
+            animation: text-int 60s linear infinite ;
+       }
+       .text-int p{
+            
+           text-align: justify;
+           line-height: 1.5;
+       }
+       @keyframes text-int{
+           0%{
+               top:100vh;
+               transform: rotateX(25deg) translateZ(0);
+           }
+           100%{
+                top:-200vh;
+                transform: rotateX(25deg) translateZ(-1500px);
+                      }
+       }
+       @media (max-width: 430px) {
+            img{
+                width: 100%;
+            }
+       }
