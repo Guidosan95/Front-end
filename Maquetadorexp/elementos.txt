@@ -1,0 +1,123 @@
+Viewport
+El viewport es el área visible de nuestro navegador.
+Podemos manipular cómo se ve, súper importante dada la variedad de dispositivos disponibles actualmente.
+El viewport nos permite configurarlo de tal manera que pueda ajustarse dinámicamente al tamaño de cada dispositivo usando el atributo ‘device-width’ que es equivalente al 100% del ancho de la pantalla de dicho dispositivo, independientemente de su tamaño, posición o resolución. La configuración básica del viewport es:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Breakpoints
+Breakpoints son bloques de diseño responsivo.
+Es importante su utilización para controlar o
+adaptar la interfaz a un tamaño de pantalla
+específico.
+Existen diversos breakpoints, pero usualmente
+se recomienda maquetar para 3 tamaños
+específicos:
+● 768px.
+● 992px.
+● 1200px.
+
+Sin embargo, como mencionamos antes, existen
+diferentes tamaños de pantalla y dispositivos. Se
+hacen constantemente estudios para entender
+esa accesibilidad variada y el resultado está en el
+obvio proceso de trabajo responsivo puesto que
+es imposible generar una sola versión de nuestra
+interfaz para poder adaptarla a todos estos
+diferentes accesos.
+
+@media
+Para poder trabajar con breakpoints desde CSS,
+debemos trabajar con la regla @media. Ésta nos
+permite marcar los “cortes” en la interfaz y
+avanzar sobre los estilos correctos al momento
+de adaptar nuestra interfaz.
+Si bien puede trabajar con diversas variantes,
+generalmente se emplean las propiedades
+min-width y max-width. Estos rangos establecen
+los diferentes breakpoints hacia cuales irán
+orientados nuestros estilos
+
+Un uso muy común utilizado desde el uso masivo
+de dispositivos móviles es la orientación de
+nuestra pantalla. Para eso utilizamos landscape
+o portrait:
+@media (orientation: landscape){
+    body{
+        flex-direction: row;
+    }
+};
+@media (orientation: portrait){
+    body{
+        flex-direction: column;
+    }
+}
+Uso de picture
+Las imágenes si bien puede resolver su
+adaptabilidad a través del uso de porcentajes,
+eso no siempre funciona.
+Por ejemplo, una imagen rectangular
+generalmente nos traerá algún tipo de problema
+no posible de resolver con %.
+En el ejemplo debajo:
+● en pantallas de 768 px o inferiores se seleccionará
+imagen-1.png,
+● en pantallas entre 769 px y 1024px se seleccionará
+imagen-2.png y,
+● en pantallas superiores a 1024px elegir la imagen por
+defecto, que es la imagen-3.png:
+<picture>
+        <source media="(max-width: 768px )" srcset="imagenes/imagen-1.png">
+        <source media="(max-width: 1024px )" srcset="imagenes/imagen-2.png">
+        <img src="imagenes/imagen-3.png" alt="imagen">
+</picture>
+
+Propiedad Object-Fit
+Propiedades adicionales
+Agregaremos algunas propiedades a tener en
+cuenta al trabajar con CSS.
+object-fit
+Esta propiedad es similar al uso que damos a
+background-size en sus valores posibles.
+Sin embargo en este caso, lo hacemos sobre la
+propia imagen inserta.
+Si tenemos inserta una imagen, en nuestro HTML,
+pero el tamaño indicado no es el que
+verdaderamente tiene la imagen, ésta se
+deformará.
+La propiedad object-fit permite adaptarla a
+formas diversas acorde al contenedor donde se
+encuentra inserta.:
+por ejemplo:
+img{object-fit:fill;}
+img{object-fit:contain;}
+img{object-fit:cover;}
+img{object-fit:scale-down;}
+
+Muchas veces tenemos tamaños de pantalla
+intermedios donde los breakpoints utilizados
+generan saltos donde la tipografía no logra el
+tamaño adecuado. Corregir esos problemas,
+genera mucho trabajo o múltiples breakpoints
+innecesarios en un proceso donde la idea es
+simplificar todo al máximo.
+vh y vw
+Una alternativa es utilizar, entonces, valores
+vinculados al ancho o alto de pantalla, por
+ejemplo, vh o vw. De esta forma, nuestra
+tipografía toma el tamaño de forma fluida.
+
+vmin y vmax
+Existen otras medidas vinculadas al cuerpo
+tipográfico en referencia a los tamaños de
+pantalla o viewports: vmin y vmax se utilizan para
+controlar el texto.
+● vmin es el radio más pequeño, es decir,
+cuando la altura del viewport es menor al
+ancho, 1vmin es igual a 1vh (recordemos que
+un 1vh es 1% del alto total del viewport). Si el
+ancho es menor que la altura, 1vmin será igual
+a un 1vw (1% del ancho total del viewport).
+● 1vmax sería lo opuesto: juega con los
+máximos. Un ejemplo sería si el viewport es
+más alto que el ancho, 1vmax es igual a 1vh.

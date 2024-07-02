@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(214, 32%, 91%);
+}
+nav h1{
+    font-size: 45px;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+    margin-right:30px ;
+    font-weight: 600;
+}
+nav h1,
+nav ul,
+#text h2{
+    color: #05447e;
+}
+
+.container{
+    background-color: hsl(214, 32%, 91%);
+    width: 100%;
+}
+#infote{
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    align-items: center;
+    
+}
+#infotext #text{
+    font-size: 25px ;
+    width: 32vw;
+    
+}
+#text h2{
+    margin: 0;
+    font-weight: 800;
+}
+#infotext #text span{
+    color: #1ebff2;
+    font-weight: 700;
+    font-size: 34px;
+    text-decoration: underline white;
+    
+}
+#imagenes img{
+    width: 21vw;
+}
+.elementor-shape-bottom{
+    display: grid;
+    fill: white;
+    transform: rotateY(3.142rad);
+    top: 10px;
+}
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main-img img{
+    width: 500px;
+}
+#main-text{
+    width: 29%;
+    order: 2;
+}
+#main-text h3{
+    color: #05447e;
+    font-size: 30px;
+    font-weight: 800;
+    text-decoration: underline rgb(255, 187, 0);
+}
+#main-text p{
+    color: grey;
+}
+#main-text p span{
+    font-weight: 800;
+}
+.whyus{
+    text-align: center;
+}

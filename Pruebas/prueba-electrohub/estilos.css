@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@keyframes subirbajar {
+    0%{
+        transform: translate(0px, 41px);
+    }
+    100%{
+        transform: translate(0px, -41px);
+    }
+}
+@keyframes desplaza{
+    0%{
+        transform: translate( 100%);
+    }
+    100%{
+        transform: translate(0 );
+    }
+}
+*{
+    box-sizing: border-box;
+    font-family: Overpass;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: fixed;
+    z-index: 6;
+    width: 100%;
+}
+#navbar{
+    background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img.img-nav{
+    width: 100px;
+}
+nav .ul{
+    justify-content: left;
+    flex-direction: column;
+    animation-name: desplaza;
+    animation-duration: 2s;
+    color: white;
+    list-style-type: none;
+    right: 0px;
+    top: 0;
+    background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    overflow: hidden;
+}
+nav .ul a{
+    
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    width: auto;
+    margin: 60px 0;
+}
+nav .ul a:hover{
+    color :#9643bd;
+    transition: .3s;
+}
+/* hamburger */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    z-index: 5;
+  }
+  
+  .checkmark {
+    position: relative;
+    top: 0;
+    left: unset;
+    right: 50px;
+    height: 1.3em;
+    width: 1.3em;
+  }
+  
+  .checkmark span {
+    width: 32px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+  
+  .checkmark span:nth-child(1) {
+    top: 10%;
+  }
+  
+  .checkmark span:nth-child(2) {
+    top: 50%;
+  }
+  
+  .checkmark span:nth-child(3) {
+    top: 90%;
+  }
+  
+  .container input:checked + .checkmark span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    -moz-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+    -o-transform: translateY(-50%) rotate(45deg);
+  }
+  
+  .container input:checked + .checkmark span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    -moz-transform: translateY(-50%) rotate(-45deg);
+    -ms-transform: translateY(-50%) rotate(-45deg);
+    -o-transform: translateY(-50%) rotate(-45deg);
+  }
+  
+  .container input:checked + .checkmark span:nth-child(3) {
+    transform: translateX(-50px);
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+    opacity: 0;
+  }
+  /* header */
+
+.header {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    height: 81vh; 
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 71vh;
+    background-size: 100vw;
+    background-image: url('../prueba-electrohub/img/RUdQHF7sQNPC9S-YP3e6z.png'); 
+    z-index: 1;
+    opacity: 0.5;
+    background-position: top;
+    background-repeat: repeat;
+    background-blend-mode: exclusion;
+}
+
+.headinter {
+    position: relative;
+    z-index: 2;
+    color: #ffff;
+    margin: 0 26vw;
+    height: 71%;
+}
+#firsth{
+    display: flex;
+    align-items: center;
+    height: 50vh;
+}
+#firsth h1{
+    font-size: 60px;
+    margin: 0;
+}
+
+#firsth img {
+    width: 67vw;
+    animation-name: subirbajar;
+    animation-duration: 2.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} 
+#secondh p{
+    display: flex;
+    width: 87vw;
+    font-size: 22px;
+}
+#thirdh{
+    width: 59vw;
+}
+#thirdh button{
+    width: auto;
+    font-size: 20px;
+    height: 54px;
+    background-color: hsl(332, 98%, 48%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0 30px;
+    cursor: pointer;
+}
+/* main */
+main{
+    background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+
+}
+#firstm{
+    margin: 0 26vw;
+    height: auto;
+    display: flex;
+    
+}
+.contentfm{
+    color: white;
+}
+.contentfm p.princp{
+    font-size: 48px;
+    font-weight: 800;
+}
+.contentm{
+    display: flex;
+    align-items: center;
+   
+}
+.numbersp{
+    margin: 0 30px 0 0;
+    background: hsl(332, 97%, 25%);
+    width: 50px;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.textm{
+    width: 75%;
+}
+.textm h3{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+.textm p{
+    font-size: 20px;
+}
+.contentfi{
+    display: flex;
+    justify-content: center;
+    width: 32vw;
+    height: 94vh;
+    margin: 15px 0 15px 15px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.contentfi:hover{
+    border-radius: 10px;
+}
+.contentfi img{
+    width: auto;
+    height: auto;
+    transition: 500ms;
+}
+.contentfi img:hover{
+   padding: 40px;
+    transition: 500ms;
+    border-radius: 10px;
+}
+/* secondm */
+#secondm{
+    margin: 10vw 26vw 0 26vw;
+    color: white;
+}
+
+#contentsm p.second{
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    font-weight: 800;
+}
+#contentsmi {
+    display: flex;
+    justify-content: space-between;
+}
+img.imgsm{
+    width: 22vw;
+    border-radius: 10px;
+}
+#contentsmi section span{
+    font-size: 26px;
+}
+#contentsmi section h3{
+    width: 96%;
+    font-weight: 400;
+}
