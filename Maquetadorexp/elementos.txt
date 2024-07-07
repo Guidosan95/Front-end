@@ -121,3 +121,159 @@ a un 1vw (1% del ancho total del viewport).
 ● 1vmax sería lo opuesto: juega con los
 máximos. Un ejemplo sería si el viewport es
 más alto que el ancho, 1vmax es igual a 1vh.
+
+Al implementar grid en el contenedor, por
+ejemplo en la siguiente estructura, no veríamos
+grandes cambios.
+Necesitamos implementar más propiedades para
+comenzar a trabajar.
+Veamos un ejemplo de utilización simple y los
+resultados que obtenemos.
+En un sistema de grillas es fundamental tener
+presente que tenemos filas y columnas.
+Para determinar cuántas columnas tendremos,
+trabajamos con grid-template-columns.
+Esta propiedad toma valores de longitud, así
+como también la palabra auto, para adaptarse
+al espacio disponible.
+También es importante saber cuántos elementos
+tenemos en total para comprender el resultado
+final. En la estructura anterior, un formato de 4
+elementos, con los siguientes estilos como vemos
+en la imagen:
+No es del todo prometedor y no implica
+demasiados cambios, veamos una imagen:
+Al trabajar con grid-template-columns los
+valores posibles son diversos según el objetivo
+planteado acorde al diseño a seguir.
+El porcentaje, como siempre, toma en cuenta el
+valor del contenedor. Veamos un ejemplo:
+A partir del html del ejemplo en la izquierda y un
+css como el que se muestra debajo:
+Si a partir del ejemplo anterior, nuestros estilos dijesen que
+ambas columnas ocupan un 50% (en este caso, dado que
+el parent tiene un width de 100px, sería 50px cada una),
+nos encontraríamos repitiendo dos veces el mismo valor.
+Trabajo con fr
+Esta medida indica un proceso en fracciones. Donde 1fr
+es una parte del todo. Para entenderlo mejor sigamos el
+mismo ejemplo anterior, si queremos lograr el mismo
+resultado pero utilizando fr, nuestro css debería decir lo
+siguiente:
+#contenedor{
+    width: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+Trabajar con filas
+El trabajo con filas, es similar. Lo realizamos a
+través de la propiedad grid-template-rows.
+Esta propiedad indica el alto de las filas, luego
+de que ya estén determinadas las columnas con
+la propiedad grid-template-column.
+fr y filas
+Al igual que con grid-template-columns, en
+grid-template-rows se puede trabajar con fr u
+otras medidas de longitud.
+Utilizando el css debajo junto al html de la
+pantalla anterio:
+#contenedor{
+    width: 100px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    display: grid;
+}
+Grid-gap y gap
+Como vimos, para generar espacios trabajamos
+con column-gap o row-gap. De todas maneras,
+siempre es interesante saber cómo trabajar de
+forma más ágil y sencilla.
+La propiedad grid-gap (actualmente
+reemplazada por la propiedad gap) nos permite
+en una línea indicar el column-gap y el row-gap.
+Siempre el primer valor responde a las filas y el
+segundo a las columnas, por tanto el ejemplo
+anterior sería:
+#contenedor{
+    width: 100px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    display: grid;
+    gap: 5px 10px
+}
+grid-auto-flow
+En el resultado anterior, la celda 9 cae por una
+falta de previsibilidad de tamaños y espacios.
+Pero podemos resolver cualquier tipo de
+inconveniente de este tipo sumando la propiedad
+grid-auto-flow, que permite indicar dónde
+queremos se posicionen aquellas celdas que no
+tengan espacio indicado explícitamente
+
+Complemento de ::after y ::before
+Hemos incluido la propiedad content.
+Esta propiedad es obligatoria ya que es la que
+permite, justamente, incorporar elementos antes
+o después del elemento al que se le aplicó
+::after o ::before. Veamos un ejemplo.
+Content permite hacer múltiples cosas, aparte de
+agregar contenido (imágenes o texto).
+Por ejemplo, una posibilidad sería generar
+contadores. Para eso, se trabaja con propiedades
+complementarias que permiten lograr mejores y
+más complejos resultados, que veremos en las
+diapositivas siguientes.
+counter-reset
+Esta propiedad indica dónde se inicializa, o
+dónde arranca nuevamente el contador.
+Si, por ejemplo, se ubica en el body, representa
+que el contador será inicializado una sola vez,
+porque el body aparece una sola vez en nuestro
+documento.
+Si por el contrario, lo aplicara a un h1, cada vez
+que aparezca un elemento h1, el contador
+volvería a inicializarse.
+counter-increment
+Este complemento permite indicar dónde
+incrementar el contador, es decir dónde va a ir
+aumentado su número.
+counter()
+Esta función permite llamar al contador según el
+nombre que le haya aplicado para poder
+identificarlo. Es una función que actúa como valor
+de la propiedad content.
+
+
+absolute
+Esta posición permite, en primera instancia, situar un
+elemento que puede ocupar el mismo espacio que otro
+
+relative
+Este valor es contenido por los elementos que
+representan muchas veces una referencia o
+contenedor para elementos absolutos. Es decir
+muchas veces los elementos relativos se utilizan
+como padres para los absolutos hijos.
+La diferencia más importante con referencia a los
+elementos absolutos es que su trabajo con
+coordenadas se fija en referencia a sí mismo y no
+al padre. 
+
+fixed
+Los elementos fijos son fáciles de comprender, si
+se tuvo en cuenta en primer lugar que era un
+elemento absoluto.
+Y esto, ¿por qué es?
+Básicamente porque un elemento fijo es igual a
+un elemento absoluto, es decir, no ocupa parte
+en el flow del documento (si le doy las mismas
+coordenadas que otro elemento se ubicará ahí
+sin problemas, lo cual seguramente generará una
+superposición), trabaja con coordenadas, pero la
+vital diferencia es que fija coordenadas en
+referencia al navegador, por eso permanece fijo
+cuando activamos la barra de scroll.
+El elemento “nos persigue”.
+Esto es típico de publicidades y anuncios o
+animaciones que a menos que las cerremos con
+JS siguen fijas en nuestra Web.
