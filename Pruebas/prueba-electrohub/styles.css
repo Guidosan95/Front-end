@@ -1,0 +1,49 @@
+.navbar{
+    background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+}
+.collapse{
+    display: flex;
+    justify-content: end;
+}
+
+.navbar {
+    position: relative; /* Asegura que la barra de navegación tenga un contexto de posición */
+    z-index: 10; /* Aumenta el z-index para que esté por encima del menú desplegable */
+}
+
+.menu-collaps {
+    position: fixed; /* Fijamos el menú para que esté fuera del flujo normal del documento */
+    right: -100%; /* Inicialmente, colocamos el menú fuera de la pantalla hacia la derecha */
+    width: 30%; /* Define el ancho del menú */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    transition: right 1.5s ease; /* Transición suave al cambiar la propiedad `right` */
+    z-index: 5; /* Asegura que el menú esté debajo de la barra de navegación */
+    background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+    
+}
+
+.menu-collaps.active {
+    right: 0; /* Cuando se despliega, el menú se posiciona en su lugar correcto */
+    opacity: 1; /* Asegura que el menú sea completamente visible */
+    transition: all 1s ease;
+}
+.menu-collaps .ul ul a{
+    display: flex;
+    color: white;
+    font-size: 30px;
+    list-style:none;
+    text-decoration: none;
+    padding-bottom: 30px;
+}
+.img{
+    width: 50px;
+}
+.img-fluid{
+    background-image: url('./img/RUdQHF7sQNPC9S-YP3e6z.png');
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    background-size: cover;
+}
