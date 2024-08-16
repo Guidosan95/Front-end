@@ -18,7 +18,8 @@
     <form id="form">
         <input id="input" autocomplete="off" /><button id="button">Send</button>
     </form>
-    <script src="/socket.io/socket.io.js"></script>
+    <!-- Asegúrate de que la ruta a socket.io.js sea correcta -->
+    <script src="/node_modules/socket.io/client-dist/socket.io.js"></script>
     <script>
         const socket = io();
 
@@ -29,15 +30,20 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             if (input.value) {
-                socket.emit('chat message', input.value);
+                const userMessage = input.value;
+                socket.emit('chat message', userMessage);
+
+                // Mostrar el mensaje del usuario en la lista de mensajes
                 const li = document.createElement('li');
-                li.textContent = 'You: ' + input.value;
+                li.textContent = 'You: ' + userMessage;
                 messages.appendChild(li);
-                input.value = '';
+
+                input.value = ''; // Limpiar el campo de entrada
             }
         });
 
         socket.on('chat message', function(msg) {
+            // Mostrar el mensaje del bot en la lista de mensajes
             const li = document.createElement('li');
             li.textContent = 'Bot: ' + msg;
             messages.appendChild(li);

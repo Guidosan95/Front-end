@@ -161,6 +161,19 @@ main{
     border-radius: 10px;
     margin-top: 50px;
 }
+#contacto-enviar{
+    background-color: white;
+    position: absolute;
+    
+    width: auto;
+    margin: 50px;
+    left: 0;
+    right: 0;
+    height: 200px;
+    align-items: center;
+
+
+}
 /* span */
 .test{
     display: flex;

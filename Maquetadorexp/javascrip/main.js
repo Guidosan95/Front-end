@@ -40,6 +40,17 @@ cerrar.addEventListener(
     }
 )
 
+const contactoEnviar = document.querySelector('#contacto-enviar');
+const contacto = document.querySelector('#contacto');
+
+contactoEnviar.style.display = 'none';
+
+contacto.addEventListener(
+    'click',
+    function(){
+        contactoEnviar.style.display = 'flex';
+    },
+)
 
 
 
