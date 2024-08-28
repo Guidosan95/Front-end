@@ -1,0 +1,318 @@
+@charset "UTF-8";
+@keyframes subir-bajar {
+  0% {
+    transform: translate(0%, 27px);
+  }
+  100% {
+    transform: translate(0%, -35px);
+  }
+}
+@keyframes desplazarcost {
+  0% {
+    transform: translate(-234.5px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+@keyframes desplazarizq {
+  0% {
+    transform: translate(234.5px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0px);
+    opacity: 1;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.collapse {
+  display: flex;
+  justify-content: end;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+}
+
+.menu-collaps {
+  position: fixed;
+  right: -100%;
+  width: 30%;
+  height: 100%;
+  top: 92px;
+  transition: right 1.5s ease;
+  z-index: 5;
+  background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+}
+.menu-collaps.active {
+  position: fixed;
+  right: 0;
+  top: 92px;
+  opacity: 1;
+  transition: all 1s ease;
+}
+.menu-collaps .ul ul a {
+  display: flex;
+  color: white;
+  font-size: 30px;
+  list-style: none;
+  text-decoration: none;
+  padding-bottom: 30px;
+}
+
+.img-fluid {
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  top: -100px;
+  padding: 100px 0 0 0;
+}
+.img-fluid::before {
+  opacity: 0.5;
+  background-color: black;
+  content: "";
+  background-image: url("./img/RUdQHF7sQNPC9S-YP3e6z.png");
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: top;
+  background-repeat: repeat;
+  background-blend-mode: exclusion;
+}
+
+.headinter {
+  padding: 0 23%;
+  position: relative;
+}
+.headinter .firsth {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+.headinter .firsth h1 {
+  font-size: 3.5rem;
+  max-width: 54%;
+}
+.headinter .firsth img {
+  max-width: 54%;
+  animation: subir-bajar;
+  animation-duration: 2.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.headinter .secondh {
+  color: white;
+  position: relative;
+  display: flex;
+}
+.headinter .secondh p {
+  font-size: 1.5rem;
+}
+.headinter .thirdh {
+  position: relative;
+  margin-top: 20px;
+}
+.headinter .thirdh .btn {
+  background-color: #f20272;
+  padding: 5px 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.second-cont {
+  padding-top: 80px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  bottom: 0px;
+  background-image: linear-gradient(45deg, #431F54 0%, #151226 60%, #17254A 100%);
+}
+.second-cont .contenedor {
+  display: flex;
+}
+.second-cont .list-group-item {
+  background-color: transparent;
+  color: white;
+}
+.second-cont .section-span {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-top: 50px;
+}
+.second-cont .section-span span {
+  background-color: hsl(332, 97%, 25%);
+  width: 4vw;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.second-cont .section-span .span li {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.second-cont .section-span .span p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+.second-cont :nth-child(2) img {
+  width: 24vw;
+}
+
+@media (max-width: 1440px) {
+  .headinter {
+    padding: 0 10%;
+  }
+}
+@media (max-width: 1186px) {
+  .menu-collaps {
+    width: 100vw;
+  }
+  .menu-collaps .ul ul {
+    padding-left: 0;
+  }
+  .menu-collaps .ul ul a {
+    font-size: 23px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-fluid {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 1024px) {
+  .headinter {
+    top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .headinter {
+    padding: 0;
+    top: 0;
+    position: relative;
+  }
+  .headinter .firsth {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .headinter .firsth h1 {
+    font-size: 3rem;
+    max-width: 100%;
+    order: 2;
+  }
+  .headinter .firsth img {
+    max-width: 54%;
+    animation: subir-bajar;
+    animation-duration: 2.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    order: 1;
+  }
+  .headinter .secondh {
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .headinter .secondh p {
+    font-size: 1.5rem;
+  }
+  .headinter .thirdh {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .headinter .thirdh .btn {
+    background-color: #f20272;
+    padding: 5px 20px;
+    color: white;
+    font-size: 20px;
+  }
+  .second-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* o `space-around` si necesitas más espacio */
+    min-height: 100vh;
+    top: 100vh;
+  }
+  .second-cont .contenedor {
+    display: block;
+  }
+  .second-cont .contenedor .primer-section h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .second-cont .contenedor .primer-section .section-span {
+    display: block !important;
+    text-align: center; /* Centra el texto */
+    padding-top: 10px; /* Reduce el espacio superior */
+  }
+  .second-cont .contenedor .primer-section .section-span .spa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .second-cont .contenedor .primer-section .section-span .spa span {
+    width: 15vw; /* Ajusta el ancho del span */
+    height: 5vh; /* Ajusta la altura del span */
+    font-size: 1.3rem;
+    /* Ajusta el tamaño de la fuente */
+  }
+  .second-cont .contenedor .primer-section .section-span .span li {
+    font-size: 1rem; /* Ajusta el tamaño de la fuente de la lista */
+  }
+  .second-cont .contenedor .primer-section .section-span .span p {
+    font-size: 0.8rem; /* Ajusta el tamaño de la fuente del párrafo */
+  }
+  .second-cont .contenedor .segundo-section {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .second-cont .contenedor .segundo-section img {
+    width: 68vw;
+    border-radius: 16px;
+  }
+  .section-span .span .section-span .span .second-cont:nth-child(2) img {
+    width: 50vw; /* Ajusta el tamaño de la imagen */
+    margin-top: 20px; /* Añade espacio superior para separar la imagen */
+  }
+}
+
+/*# sourceMappingURL=style-r.css.map */
