@@ -1,48 +1,39 @@
-const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
-const path = require('path');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const responseDiv = document.getElementById('response');
 
-const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-// Ruta para servir socket.io.js desde node_modules
-app.get('/socket.io/socket.io.js', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'node_modules', 'socket.io', 'client-dist', 'socket.io.js'));
-});
-
-// Ruta para servir archivos estáticos desde la carpeta public
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Manejar conexiones entrantes de Socket.IO
-io.on('connection', (socket) => {
-    console.log('a user connected');
-
-    socket.on('chat message', (msg) => {
-        console.log('message: ' + msg);
-
-        let response = '';
-        if (msg.toLowerCase() === 'hola') {
-            response = '¡Hola! ¿Cómo estás?';
-        } else if (msg.toLowerCase() === 'adios') {
-            response = '¡Adiós! ¡Que tengas un buen día!';
-        } else {
-            response = 'No entiendo tu mensaje.';
+        const userInput = chatInput.value.trim();
+        if (userInput === "") {
+            alert("Por favor, escribe algo antes de enviar.");
+            return;
         }
 
-        // Emitir la respuesta del bot de nuevo al cliente
-        io.emit('chat message', response);
-    });
+        responseDiv.textContent = "Procesando...";
+        chatInput.value = ""; // Clear the input field
 
-    // Manejar desconexiones de usuarios
-    socket.on('disconnect', () => {
-        console.log('user disconnected');
-    });
-});
+        try {
+            const response = await fetch('http://localhost:5501/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            });
 
-// Definir el puerto en el que escuchará el servidor
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+            if (!response.ok) {
+                throw new Error("Error en la solicitud al servidor");
+            }
+
+            const data = await response.json();
+            const gptResponse = data.choices[0].message.content;
+            responseDiv.textContent = gptResponse;
+        } catch (error) {
+            responseDiv.textContent = "Ocurrió un error al procesar tu solicitud. Intenta nuevamente.";
+            console.error("Error:", error);
+        }
+    });
 });

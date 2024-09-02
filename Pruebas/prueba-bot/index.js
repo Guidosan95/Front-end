@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         responseDiv.textContent = "Procesando...";
-        chatInput.value = ""; // Clear the input field
+        chatInput.value = ""; // Limpiar el campo de entrada
 
         try {
-            const response = await fetch('http://127.0.0.1:5501/Pruebas/prueba-bot/index.html', {
+            const response = await fetch('http://localhost:5501/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,4 +37,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
