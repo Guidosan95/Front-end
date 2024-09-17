@@ -155,3 +155,12 @@ promesa.then((valor)=>{
     console.log('Promesa resuelta', valor)
 })
 promesa.catch();
+
+/*Arquitectura en Pipeline
+La arquitectura basada en filtros (en pipeline)
+consiste en ir transformando un flujo de datos
+en un proceso comprendido por varias fases
+secuenciales, siendo la entrada de cada una la
+salida de la anterior.*/
+// Lectura > Seleccion > Proyeccion > Reduccion
+
